@@ -9,7 +9,7 @@ name: Auto-tag on version bump
 # bump and nothing happens. CI also asserts repo.json's AssemblyVersion /
 # TestingAssemblyVersion match this value.
 #
-# The tag is pushed with HUB_REPO_PAT (a PAT with contents:write on this repo)
+# The tag is pushed with TAG_PUSH_TOKEN (a PAT with contents:write on this repo)
 # rather than the default GITHUB_TOKEN: tags pushed by GITHUB_TOKEN do NOT
 # cascade-trigger other workflows, so release.yml would otherwise need a manual
 # dispatch. With the PAT set, the tag push triggers release.yml automatically.
@@ -40,7 +40,7 @@ jobs:
           fetch-depth: 0
           # PAT so the tag push cascade-triggers release.yml; falls back to the
           # default token (no cascade) when the secret isn't configured.
-          token: ${{ secrets.HUB_REPO_PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TAG_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Read plugin version from Directory.Build.props
         id: version

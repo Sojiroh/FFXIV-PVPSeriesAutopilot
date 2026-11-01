@@ -358,7 +358,7 @@
     },
     "r2900": {
       "1": "Añadida la pestaña «Compras»: gasta Wolf Marks y Trophy Crystals en Wolves' Den Pier según tu lista, y las Wolf Marks sobrantes van a Ventures",
-      "2": "Añadido «Moverte tú»: tú mueves el personaje y el plugin sigue eligiendo objetivos, luchando y poniéndose en cola (ajustes o /apsg steer)",
+      "2": "Añadido «Moverte tú»: tú mueves el personaje y el plugin sigue eligiendo objetivos, luchando y poniéndose en cola (ajustes o /psa steer)",
       "3": "Mejorado «Juego humano»: cada partida tiene sus propias rutas, distancias, momento de salida y hábitos de montura, así que los bots de una misma partida ya no se mueven al unísono",
       "4": "Corregido: montar y desmontar sin parar, atascarse en puntos inalcanzables y meterse en el hielo de Frontline"
     },
@@ -429,7 +429,7 @@
       "15": "Mejorado el seguimiento del equipo en Frontline y Rival Wings: el bot ya no cruza el mapa por un grupo solo un poco más grande que el suyo, tiene en cuenta lo lejos que está un grupo antes de unirse y se coloca donde el equipo está realmente agrupado, no en medio de una columna estirada",
       "16": "Mejorada la retirada en Crystalline Conflict: tras replegarse, el bot espera a pasar un momento sin recibir daño antes de volver, en lugar de meterse de nuevo en la pelea en cuanto recupera los PV",
       "17": "Corregido: las estadísticas totales se borraban cuando el archivo de historial se dañaba, por ejemplo por un cierre inesperado al guardar; ahora el historial se guarda de forma segura y un archivo ilegible se conserva como run-history.corrupt.json en lugar de sobrescribirse",
-      "18": "Se añadieron /apsg start, stop, finish y status, para que una macro pueda iniciar una sesión, detenerla, terminar tras la partida actual o mostrar cómo va",
+      "18": "Se añadieron /psa start, stop, finish y status, para que una macro pueda iniciar una sesión, detenerla, terminar tras la partida actual o mostrar cómo va",
       "19": "Corregido: el bot se quedaba en la zona de salida toda la partida de Crystalline Conflict cuando no podía leer el temporizador, por ejemplo justo después de un parche del juego; tras un minuto sin temporizador legible empieza la partida igualmente",
       "20": "Corregido: la EXP de serie ganada mostraba toda tu EXP de serie cuando una sesión empezaba antes de que se cargara tu perfil JcJ",
       "21": "Mejorados Bloodbath y Swift: Bloodbath espera ahora a tener un enemigo a distancia cuerpo a cuerpo, porque su curación sale de tus golpes, y Swift se usa para acortar distancia con tu objetivo en lugar de cuando ya estás a su lado",
@@ -438,25 +438,15 @@
     },
     "r21310": {
       "1": "Corregido: los botones Modo del LB y Tipo de umbral de los ajustes del Límite cortaban sus etiquetas en idiomas más largos; ahora se ensanchan para que quepa el texto",
-      "2": "Se añadió /apsg reset, que devuelve la ventana a la pantalla con su tamaño por defecto si quedó fuera de la pantalla o demasiado grande para agarrarla",
+      "2": "Se añadió /psa reset, que devuelve la ventana a la pantalla con su tamaño por defecto si quedó fuera de la pantalla o demasiado grande para agarrarla",
       "3": "Mejoradas las traducciones: la línea de estado, los motivos de parada y los mensajes de chat de una sesión siguen ahora el idioma del plugin en lugar de salir siempre en inglés"
     }
   },
   "about": {
-    "support": {
-      "title": "Hecho con amor y cariño",
-      "body": "Este plugin es un proyecto de una sola persona, hecho en mi tiempo libre porque me encantan este juego y su comunidad. Mantenerlo al día me lleva muchas de esas horas. Si te ha ayudado, apoyarme en Patreon o invitarme a un café me permite seguir dedicándole ese tiempo. Gracias por estar aquí.",
-      "button": "Apoyar en Patreon",
-      "hint": "Abrir Patreon, clic derecho para copiar el enlace.",
-      "coffeeButton": "Invitarme a un café",
-      "coffeeHint": "Abrir Buy Me a Coffee, clic derecho para copiar el enlace."
-    },
     "linkHint": "Clic para abrir, clic derecho para copiar el enlace.",
     "madeBy": "Creado por {0}",
     "version": "v {0}",
     "community": "Comunidad",
-    "discordTitle": "Únete al Discord",
-    "discordBody": "Consigue ayuda, informa de errores, comparte ideas y entérate antes que nadie de las novedades.",
     "githubTitle": "Ver en GitHub",
     "githubBody": "Explora el código fuente y todas las versiones.",
     "reminder": {
@@ -565,7 +555,7 @@
       "behavior": "Comportamiento",
       "behaviorHelp": "Cómo se posiciona el bot y elige sus peleas.",
       "manualMovement": "Moverte tú",
-      "manualMovementHelp": "Tú mueves al personaje y el plugin hace el resto: objetivos, rotación, Límite y la cola. Nunca se desplaza, monta, esquiva ni embiste por ti, y las habilidades con lanzamiento esperan a que te quedes quieto. Cámbialo cuando quieras, incluso en plena partida, o escribe /apsg steer.",
+      "manualMovementHelp": "Tú mueves al personaje y el plugin hace el resto: objetivos, rotación, Límite y la cola. Nunca se desplaza, monta, esquiva ni embiste por ti, y las habilidades con lanzamiento esperan a que te quedes quieto. Cámbialo cuando quieras, incluso en plena partida, o escribe /psa steer.",
       "reactionTime": "Juego humano",
       "reactionTimeHelp": "Añade retardos de reacción humanos y da a cada partida su propio estilo: ruta, separación, momento de salida y hábitos de montura. Los bots de una misma partida dejan de moverse al unísono.",
       "recordMatches": "Grabar partidas",
@@ -784,7 +774,7 @@
     "footnote": "Cada Venture cuesta 100 Wolf Marks. Para comprar necesitas el aetheryte de Wolves' Den Pier como destino de teletransporte.",
     "chatStart": "De compras en Wolves' Den Pier: {0}.",
     "chatDone": "Compras terminadas: {0}.",
-    "chatNothingBought": "La salida de compras terminó sin comprar nada. Los detalles están en /apsg log.",
+    "chatNothingBought": "La salida de compras terminó sin comprar nada. Los detalles están en /psa log.",
     "chatFailed": "La salida de compras se detuvo: {0}",
     "chatBusy": "Compras omitidas: termina antes el contenido, el combate o la cola.",
     "quantityItem": "{0} × {1}"
@@ -823,8 +813,8 @@
     "steering": "Te mueves tú"
   },
   "plugin": {
-    "commandHelp": "Abre o cierra la ventana de Auto PVP Series Grind. /apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
-    "commandHelpAlias": "Alias de /apsg.",
+    "commandHelp": "Abre o cierra la ventana de PVP Series Autopilot. /psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
+    "commandHelpAlias": "Alias de /psa.",
     "steerOn": "Ahora te mueves tú. El plugin sigue eligiendo objetivos y luchando.",
     "steerOff": "El plugin vuelve a moverse solo.",
     "noRun": "No hay ninguna sesión en curso.",

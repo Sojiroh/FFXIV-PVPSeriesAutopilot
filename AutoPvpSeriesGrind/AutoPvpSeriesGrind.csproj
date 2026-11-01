@@ -2,6 +2,9 @@
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
     <!-- Version, Authors, License, RepoUrl all inherited from ../Directory.Build.props -->
+    <!-- AssemblyName is the Dalamud InternalName; the packager reads PvpSeriesAutopilot.json as the manifest. -->
+    <AssemblyName>PvpSeriesAutopilot</AssemblyName>
+    <RootNamespace>AutoPvpSeriesGrind</RootNamespace>
     <LangVersion>preview</LangVersion>
     <IsPackable>false</IsPackable>
   </PropertyGroup>

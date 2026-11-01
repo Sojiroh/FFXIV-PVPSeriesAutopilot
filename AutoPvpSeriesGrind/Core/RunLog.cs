@@ -11,7 +11,7 @@ public enum RunLogLevel : byte { Verbose, Debug, Info, Warning, Error }
 public readonly record struct RunLogLine(long Sequence, DateTime AtUtc, RunLogLevel Level, string Source, string Message, string? Detail, int Repeat);
 
 // In-window copy of everything the plugin logs, so a bug report can be pasted straight from the
-// console instead of digging the [APSG] lines out of dalamud.log. IPC callbacks and file loads log
+// console instead of digging the [PSA] lines out of dalamud.log. IPC callbacks and file loads log
 // off the framework thread, so every access goes through the gate.
 public static class RunLog
 {

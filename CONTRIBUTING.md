@@ -5,14 +5,14 @@ Thanks for taking an interest. This is a small solo project, but PRs are welcome
 ## Quick start
 
 ```bash
-git clone --recurse-submodules https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind.git
-cd FFXIV-AutoPVPSeriesGrind
+git clone --recurse-submodules https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot.git
+cd FFXIV-PVPSeriesAutopilot
 dotnet build AutoPvpSeriesGrind.sln -c Release
 ```
 
 You need the .NET 10 SDK. The plugin requires Dalamud at runtime; CI pulls a Dalamud dev build automatically and that's enough to compile. See `.github/workflows/release.yml` if you want to reproduce CI locally.
 
-Load the built plugin via `/xlsettings` -> **Experimental** -> **Dev Plugin Locations**, pointing at `AutoPvpSeriesGrind/bin/Release/AutoPvpSeriesGrind/AutoPvpSeriesGrind.dll`.
+Load the built plugin via `/xlsettings` -> **Experimental** -> **Dev Plugin Locations**, pointing at `AutoPvpSeriesGrind/bin/Release/PvpSeriesAutopilot.dll`.
 
 ## Project layout
 

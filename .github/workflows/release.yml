@@ -1,4 +1,4 @@
-name: Release AutoPvpSeriesGrind
+name: Release PVP Series Autopilot
 
 on:
   push:
@@ -22,10 +22,6 @@ jobs:
     runs-on: windows-latest
     outputs:
       target: ${{ steps.tag.outputs.target }}
-    # Job-level so the hub-ping step's `if` can see it — `secrets` can't be used
-    # directly in an `if:` condition, but `env` mapped from a secret can.
-    env:
-      HUB_REPO_PAT: ${{ secrets.HUB_REPO_PAT }}
 
     steps:
       - name: Resolve target tag
@@ -76,7 +72,7 @@ jobs:
       - name: Stage latest.zip
         shell: pwsh
         run: |
-          $src = 'AutoPvpSeriesGrind/bin/Release/AutoPvpSeriesGrind/latest.zip'
+          $src = 'AutoPvpSeriesGrind/bin/Release/PvpSeriesAutopilot/latest.zip'
           if (-not (Test-Path $src)) { throw "SDK-built plugin zip not found at $src" }
           Copy-Item $src 'latest.zip' -Force
 
@@ -117,7 +113,7 @@ jobs:
             exit 0
           }
 
-          $plugin  = 'Auto PVP Series Grind'
+          $plugin  = 'PVP Series Autopilot'
           $icon    = "https://raw.githubusercontent.com/$($env:GH_REPO)/master/AutoPvpSeriesGrind/Images/Icon.png"
           $relList = "https://github.com/$($env:GH_REPO)/releases"
 
@@ -237,19 +233,82 @@ jobs:
           Write-Error 'Failed to push repo.json bump after 5 attempts.'
           exit 1
 
-      # Ping the multi-plugin hub repo so it regenerates repo.json immediately
-      # instead of waiting for its hourly cron. The hub workflow re-reads each
-      # plugin's repo.json and refreshes DownloadCount from the GitHub API.
-      - name: Trigger hub repo regeneration
-        if: ${{ env.HUB_REPO_PAT != '' }}
-        shell: bash
+      # Publish to the Sojiroh custom Dalamud repository (served by GitHub Pages as
+      # pluginmaster.json). Store metadata comes from the repo.json bumped above;
+      # CUSTOM_REPO_TOKEN needs contents:write on Sojiroh/SojirohPlugins.
+      - name: Checkout custom plugin repository
+        uses: actions/checkout@v7
+        with:
+          repository: Sojiroh/SojirohPlugins
+          token: ${{ secrets.CUSTOM_REPO_TOKEN }}
+          path: custom-repository
+
+      - name: Update custom repository entry
+        shell: pwsh
+        env:
+          PLUGIN_VERSION: ${{ steps.tag.outputs.version }}
+          TAG_NAME: ${{ steps.tag.outputs.target }}
+          SOURCE_REPOSITORY: ${{ github.repository }}
         run: |
-          curl -fsSL -X POST \
-            -H "Authorization: Bearer $HUB_REPO_PAT" \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/XeldarAlz/DalamudPlugins/dispatches \
-            -d '{"event_type":"plugin-released","client_payload":{"plugin":"${{ github.event.repository.name }}","version":"${{ steps.tag.outputs.version }}"}}'
+          $meta = @(Get-Content -Raw -Path 'repo.json' | ConvertFrom-Json)[0]
+          $assetUrl = "https://github.com/$env:SOURCE_REPOSITORY/releases/download/$env:TAG_NAME/latest.zip"
+
+          $entry = [ordered]@{
+            Author              = $meta.Author
+            Name                = $meta.Name
+            InternalName        = $meta.InternalName
+            AssemblyVersion     = $env:PLUGIN_VERSION
+            RepoUrl             = $meta.RepoUrl
+            ApplicableVersion   = $meta.ApplicableVersion
+            DalamudApiLevel     = [int]$meta.DalamudApiLevel
+            Punchline           = $meta.Punchline
+            Description         = $meta.Description
+            IconUrl             = $meta.IconUrl
+            IsHide              = $false
+            IsTestingExclusive  = $false
+            DownloadLinkInstall = $assetUrl
+            DownloadLinkUpdate  = $assetUrl
+            DownloadCount       = [int]$meta.DownloadCount
+            LastUpdate          = [long]$meta.LastUpdate
+            Tags                = @($meta.Tags)
+            CategoryTags        = @($meta.CategoryTags)
+          }
+
+          $entryFile = "entries\$($meta.InternalName).json"
+          New-Item -ItemType Directory -Force -Path .\custom-repository\entries | Out-Null
+          $entry | ConvertTo-Json -Depth 10 | Set-Content ".\custom-repository\$entryFile" -Encoding utf8
+
+          Push-Location .\custom-repository
+          node .\scripts\generate-pluginmaster.mjs
+          if ($LASTEXITCODE -ne 0) { throw 'generate-pluginmaster.mjs failed.' }
+
+          git add $entryFile pluginmaster.json
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host 'Custom repository metadata is already up to date.'
+          } else {
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Update $($meta.InternalName) to $env:PLUGIN_VERSION"
+
+            $pushed = $false
+            for ($attempt = 1; $attempt -le 3; $attempt++) {
+              git push
+              if ($LASTEXITCODE -eq 0) {
+                $pushed = $true
+                break
+              }
+
+              Write-Warning "Push attempt $attempt failed; rebasing on origin/main before retry."
+              git pull --rebase origin main
+              if ($LASTEXITCODE -ne 0) {
+                throw 'Failed to rebase custom repository before retry.'
+              }
+            }
+
+            if (-not $pushed) {
+              throw 'Failed to push custom repository metadata after 3 attempts.'
+            }
+          }
+          Pop-Location
 
   # Called rather than left to `release: published`, which never fires for a release
   # published with GITHUB_TOKEN. Runs after the repo.json bump so both pushes to master

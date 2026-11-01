@@ -1,8 +1,8 @@
 # AI usage
 
-This doc records how AI tooling is used to build Auto PVP Series Grind and what level of involvement that amounts to. Read it before you open a pull request.
+This doc records how AI tooling is used to build PVP Series Autopilot and what level of involvement that amounts to. Read it before you open a pull request.
 
-Auto PVP Series Grind ships from its own repository, so the [official Dalamud plugin repository's AI policy](https://dalamud.dev/plugin-publishing/ai-policy/) does not bind it. This project holds to that policy anyway, because it is the community's standard for what honest AI use looks like in a Dalamud plugin, and because a plugin nobody is forced to audit is exactly the kind that should be able to survive one. Everything below is written to satisfy it.
+PVP Series Autopilot ships from its own repository, so the [official Dalamud plugin repository's AI policy](https://dalamud.dev/plugin-publishing/ai-policy/) does not bind it. This project holds to that policy anyway, because it is the community's standard for what honest AI use looks like in a Dalamud plugin, and because a plugin nobody is forced to audit is exactly the kind that should be able to survive one. Everything below is written to satisfy it.
 
 ## Key files
 
@@ -15,7 +15,7 @@ Auto PVP Series Grind ships from its own repository, so the [official Dalamud pl
 
 Dalamud's policy uses six levels, adapted from [AI-DECLARATION.md](https://ai-declaration.md/): None, Hint, Assist, Pair, Copilot, Auto.
 
-**Auto PVP Series Grind declares Copilot.** AI implements while the human plans, reviews, tests, and owns the result. The AI does most of the writing.
+**PVP Series Autopilot declares Copilot.** AI implements while the human plans, reviews, tests, and owns the result. The AI does most of the writing.
 
 That is the honest label and it is deliberately not the lowest one that could be argued. The implementation step inside a task runs autonomously, which reads as Auto if you look only at that step. It is bounded on both ends by a human who decides what gets built and whether it ships, which is what Copilot describes.
 
@@ -37,7 +37,7 @@ The human gates, in order, none of them skippable:
 
 ## What this does not change
 
-Nothing in this doc lowers a standard. Code produced with AI assistance is held to exactly the bar every other change meets: the CONTRIBUTING.md checklist, the .editorconfig style, one concern per pull request, and `[APSG]` log lines that make every step of the match loop auditable. A reviewer cannot tell which lines came from where, and that is the point.
+Nothing in this doc lowers a standard. Code produced with AI assistance is held to exactly the bar every other change meets: the CONTRIBUTING.md checklist, the .editorconfig style, one concern per pull request, and `[PSA]` log lines that make every step of the match loop auditable. A reviewer cannot tell which lines came from where, and that is the point.
 
 The one thing AI use does change is where the verification effort goes. AI gets Dalamud and FFXIVClientStructs APIs wrong often enough that any call into either is suspect until it has run in game. The IPC calls into vnavmesh and Lifestream deserve the same suspicion: a call that compiles says nothing about whether the other plugin still answers it the same way. The action and status ids in the built-in rotation are the same kind of claim: every id under `Core/Rotation/` was checked against XIVAPI before it shipped, and a new one has to be too.
 
@@ -55,7 +55,7 @@ Nobody is judged for the level they declare. An undeclared one is the problem.
 
 The eight non-English catalogs under AutoPvpSeriesGrind/Localization/ are AI-assisted with human review. English is the source: it is the default text of every string in `Core/Localization/L.cs`, and en.json is never loaded when the plugin runs in English. Game data is not translated at all: job and map names are read from the game client, so they always match what the player sees in their own client.
 
-This is the approach Dalamud's policy asks for, and the gap is coverage rather than method: catalogs without a native-speaker pass should be treated as placeholders until one lands. Native corrections are welcome from anyone, through the [translation issue form](https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind/issues/new?template=translation_report.yml).
+This is the approach Dalamud's policy asks for, and the gap is coverage rather than method: catalogs without a native-speaker pass should be treated as placeholders until one lands. Native corrections are welcome from anyone, through the [translation issue form](https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot/issues/new?template=translation_report.yml).
 
 ## Gotchas
 

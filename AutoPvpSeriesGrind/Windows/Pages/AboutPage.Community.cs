@@ -22,26 +22,26 @@ internal sealed partial class AboutPage
 
     private static readonly CommunityLink[] communityLinks =
     [
-        new("##apsg_about_discord", FontAwesomeIcon.Comments, L.About.DiscordTitle, L.About.DiscordBody, DiscordUrl, Styling.AccentDiscord),
         new("##apsg_about_github", FontAwesomeIcon.CodeBranch, L.About.GitHubTitle, L.About.GitHubBody, RepoUrl, Styling.AccentMagenta),
     ];
 
     private void DrawCommunity()
     {
         var scale = ImGuiHelpers.GlobalScale;
-        SectionHeader(FontAwesomeIcon.Users, Loc.T(L.About.Community), Styling.AccentDiscord, columnWidth);
+        SectionHeader(FontAwesomeIcon.Users, Loc.T(L.About.Community), Styling.AccentMagenta, columnWidth);
 
         var origin = new Vector2(columnX, ImGui.GetCursorScreenPos().Y);
         var gap = TileGap * scale;
         var stacked = columnWidth < TileStackBelow * scale;
-        var tileSize = new Vector2(stacked ? columnWidth : (columnWidth - gap) * 0.5f, TileHeight * scale);
+        var columns = stacked ? 1 : Math.Min(communityLinks.Length, 2);
+        var tileSize = new Vector2((columnWidth - gap * (columns - 1)) / columns, TileHeight * scale);
         for (var index = 0; index < communityLinks.Length; index++)
         {
-            var offset = stacked ? new Vector2(0f, index * (tileSize.Y + gap)) : new Vector2(index * (tileSize.X + gap), 0f);
+            var offset = new Vector2(index % columns * (tileSize.X + gap), index / columns * (tileSize.Y + gap));
             DrawTile(communityLinks[index], origin + offset, tileSize);
         }
 
-        var rows = stacked ? communityLinks.Length : 1;
+        var rows = (communityLinks.Length + columns - 1) / columns;
         ImGui.SetCursorScreenPos(origin);
         ImGui.Dummy(new Vector2(columnWidth, rows * tileSize.Y + (rows - 1) * gap));
     }

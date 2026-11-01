@@ -358,7 +358,7 @@
     },
     "r2900": {
       "1": "Ajout de l'onglet « Achats » : dépense vos marques de loup et cristaux-trophées à la Jetée de l'Antre des loups selon votre liste, le reste des marques allant aux jetons de tâche",
-      "2": "Ajout de « Se déplacer soi-même » : vous déplacez le personnage, le plugin continue de cibler, de combattre et de s'inscrire (réglages ou /apsg steer)",
+      "2": "Ajout de « Se déplacer soi-même » : vous déplacez le personnage, le plugin continue de cibler, de combattre et de s'inscrire (réglages ou /psa steer)",
       "3": "Amélioration de « Jeu humain » : chaque match a ses propres trajets, espacements, moment de sortie et habitudes de monture, les bots d'un même match ne bougent plus en même temps",
       "4": "Correction : montée et descente de monture en boucle, blocage sur des points inaccessibles et marche dans la glace en Frontline"
     },
@@ -429,7 +429,7 @@
       "15": "Amélioration du suivi de l'équipe en Frontline et Rival Wings : le bot ne traverse plus la carte pour un groupe à peine plus grand que le sien, tient compte de la distance d'un groupe avant de le rejoindre et se place là où l'équipe est vraiment groupée, plutôt qu'au milieu d'une colonne étirée",
       "16": "Amélioration du repli en Crystalline Conflict : après s'être replié, le bot attend un instant sans subir de dégâts avant d'y retourner, au lieu de revenir dans le combat dès que ses PV remontent",
       "17": "Correction : les statistiques globales étaient effacées quand le fichier d'historique était endommagé, par exemple par un plantage pendant l'enregistrement ; l'historique est désormais enregistré de façon sûre, et un fichier illisible est conservé sous le nom run-history.corrupt.json au lieu d'être écrasé",
-      "18": "Ajout de /apsg start, stop, finish et status, pour qu'une macro puisse lancer une session, l'arrêter, finir après le match en cours ou afficher où elle en est",
+      "18": "Ajout de /psa start, stop, finish et status, pour qu'une macro puisse lancer une session, l'arrêter, finir après le match en cours ou afficher où elle en est",
       "19": "Correction : le bot restait au point de départ pendant tout un match de Crystalline Conflict quand le minuteur du match était illisible, par exemple juste après un patch du jeu ; après une minute sans minuteur lisible, il lance quand même le match",
       "20": "Correction : l'EXP de série gagnée affichait toute votre EXP de série quand une session démarrait avant le chargement de votre profil JcJ",
       "21": "Amélioration de Bloodbath et Swift : Bloodbath attend désormais un ennemi au corps à corps, car ses soins viennent de vos coups, et Swift sert à combler la distance avec votre cible au lieu d'être lancé quand vous êtes déjà à côté",
@@ -438,25 +438,15 @@
     },
     "r21310": {
       "1": "Correction : les boutons Mode de LB et Type de seuil des réglages de la Transcendance coupaient leurs libellés dans les langues plus longues ; ils s'élargissent désormais pour que le texte tienne",
-      "2": "Ajout de /apsg reset, qui ramène la fenêtre à l'écran à sa taille par défaut si elle s'est retrouvée hors de l'écran ou trop grande pour être saisie",
+      "2": "Ajout de /psa reset, qui ramène la fenêtre à l'écran à sa taille par défaut si elle s'est retrouvée hors de l'écran ou trop grande pour être saisie",
       "3": "Amélioration des traductions : la ligne d'état, les raisons d'arrêt et les messages de chat d'une session suivent désormais la langue du plugin au lieu d'être toujours en anglais"
     }
   },
   "about": {
-    "support": {
-      "title": "Fait avec amour et soin",
-      "body": "Ce plugin est un projet mené par une seule personne, pendant mon temps libre, parce que j'aime ce jeu et sa communauté. Le maintenir à jour me prend beaucoup de ces heures. S'il vous a aidé, me soutenir sur Patreon ou m'offrir un café me permet de continuer à lui consacrer ce temps. Merci d'être là.",
-      "button": "Soutenir sur Patreon",
-      "hint": "Ouvrir Patreon, clic droit pour copier le lien.",
-      "coffeeButton": "M'offrir un café",
-      "coffeeHint": "Ouvrir Buy Me a Coffee, clic droit pour copier le lien."
-    },
     "linkHint": "Cliquez pour ouvrir, clic droit pour copier le lien.",
     "madeBy": "Réalisé par {0}",
     "version": "v {0}",
     "community": "Communauté",
-    "discordTitle": "Rejoindre le Discord",
-    "discordBody": "Obtenez de l'aide, signalez des bugs, partagez vos idées et découvrez les mises à jour en premier.",
     "githubTitle": "Voir sur GitHub",
     "githubBody": "Parcourez le code source et toutes les versions.",
     "reminder": {
@@ -565,7 +555,7 @@
       "behavior": "Comportement",
       "behaviorHelp": "Comment le bot se positionne et choisit ses combats.",
       "manualMovement": "Se déplacer soi-même",
-      "manualMovementHelp": "Vous déplacez le personnage, le plugin fait le reste : cibles, rotation, Transcendance et file d'attente. Il ne se déplace, ne monte, n'esquive et ne fonce jamais à votre place, et les compétences à incantation attendent que vous soyez immobile. Changez quand vous voulez, même en pleine partie, ou tapez /apsg steer.",
+      "manualMovementHelp": "Vous déplacez le personnage, le plugin fait le reste : cibles, rotation, Transcendance et file d'attente. Il ne se déplace, ne monte, n'esquive et ne fonce jamais à votre place, et les compétences à incantation attendent que vous soyez immobile. Changez quand vous voulez, même en pleine partie, ou tapez /psa steer.",
       "reactionTime": "Jeu humain",
       "reactionTimeHelp": "Ajoute des délais de réaction humains et donne à chaque partie son propre style : trajet, espacement, timing à la porte et habitudes de monture. Les bots d'une même partie ne bougent plus en cadence.",
       "recordMatches": "Enregistrer les matchs",
@@ -784,7 +774,7 @@
     "footnote": "Les jetons de tâche coûtent 100 marques de loup chacun. Les achats nécessitent l'éthérite de la Jetée de l'Antre des loups comme destination de téléportation.",
     "chatStart": "Achats à la Jetée de l'Antre des loups : {0}.",
     "chatDone": "Achats terminés : {0}.",
-    "chatNothingBought": "La tournée d'achats s'est terminée sans rien acheter. Les détails sont dans /apsg log.",
+    "chatNothingBought": "La tournée d'achats s'est terminée sans rien acheter. Les détails sont dans /psa log.",
     "chatFailed": "La tournée d'achats s'est arrêtée : {0}",
     "chatBusy": "Achats annulés : terminez d'abord le contenu, le combat ou la file d'attente.",
     "quantityItem": "{0} × {1}"
@@ -823,8 +813,8 @@
     "steering": "Vous dirigez"
   },
   "plugin": {
-    "commandHelp": "Affiche ou masque la fenêtre Auto PVP Series Grind. /apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
-    "commandHelpAlias": "Alias de /apsg.",
+    "commandHelp": "Affiche ou masque la fenêtre PVP Series Autopilot. /psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
+    "commandHelpAlias": "Alias de /psa.",
     "steerOn": "Vous dirigez maintenant. Le plugin continue de cibler et de combattre.",
     "steerOff": "Le plugin reprend les déplacements.",
     "noRun": "Aucune session en cours.",

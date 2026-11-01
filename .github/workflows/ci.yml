@@ -89,6 +89,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v7
         with:
-          name: AutoPvpSeriesGrind-plugin
-          path: AutoPvpSeriesGrind/bin/Release/AutoPvpSeriesGrind/latest.zip
+          name: PvpSeriesAutopilot-plugin
+          path: AutoPvpSeriesGrind/bin/Release/PvpSeriesAutopilot/latest.zip
           if-no-files-found: warn

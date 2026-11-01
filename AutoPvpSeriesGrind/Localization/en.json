@@ -358,7 +358,7 @@
     },
     "r2900": {
       "1": "Added a Shopping tab that spends Wolf Marks and Trophy Crystals at Wolves' Den Pier from your list, with leftover Wolf Marks going to Ventures",
-      "2": "Added Steer yourself: you move the character while the plugin keeps targeting, fighting and queueing (settings or /apsg steer)",
+      "2": "Added Steer yourself: you move the character while the plugin keeps targeting, fighting and queueing (settings or /psa steer)",
       "3": "Improved Human-like play: each match gets its own routes, spacing, gate timing and mount habits, so bots in the same match no longer move in lockstep",
       "4": "Fixed mounting and dismounting over and over, getting stuck on unreachable spots, and walking into the ice in Frontline"
     },
@@ -429,7 +429,7 @@
       "15": "Improved Frontline and Rival Wings team following: the bot no longer crosses the map for a group only slightly bigger than the one it is with, weighs how far a group is before joining it, and stands where the team is actually packed instead of the middle of a stretched-out column",
       "16": "Improved retreating in Crystalline Conflict: after falling back, the bot waits until it has gone a moment without taking damage before going back in, instead of walking straight back into the fight the instant its HP recovers",
       "17": "Fixed lifetime stats being wiped when the history file got damaged, for example by a crash mid-save: history is now saved safely, and an unreadable file is kept as run-history.corrupt.json instead of being overwritten",
-      "18": "Added /apsg start, stop, finish and status, so a macro can start a run, end it, finish after the current match or print where it stands",
+      "18": "Added /psa start, stop, finish and status, so a macro can start a run, end it, finish after the current match or print where it stands",
       "19": "Fixed the bot standing in spawn for a whole Crystalline Conflict match when the match timer could not be read, for example right after a game patch: after a minute without a readable timer it starts the match anyway",
       "20": "Fixed Series EXP gained showing your entire Series total when a run started before your PvP profile had loaded",
       "21": "Improved Bloodbath and Swift: Bloodbath now waits for an enemy in melee range, since its healing comes from your hits, and Swift is used to close the gap to your target instead of while already next to it",
@@ -438,25 +438,15 @@
     },
     "r21310": {
       "1": "Fixed the LB mode and Threshold type buttons in the Limit Break settings cutting off their labels in longer languages: they now widen to fit",
-      "2": "Added /apsg reset, which brings the window back on screen at its default size if it ended up off screen or too large to grab",
+      "2": "Added /psa reset, which brings the window back on screen at its default size if it ended up off screen or too large to grab",
       "3": "Improved translations: the status line, stop reasons and the chat messages a run prints now follow the plugin language instead of always being in English"
     }
   },
   "about": {
-    "support": {
-      "title": "Made with love and care",
-      "body": "This plugin is a one-person project, built in my free time because I love this game and its community. Keeping it updated takes a lot of those hours. If it has helped you, supporting me on Patreon or buying me a coffee means I can keep giving it that time. Thank you for being here.",
-      "button": "Support on Patreon",
-      "hint": "Open Patreon, right-click to copy the link.",
-      "coffeeButton": "Buy me a coffee",
-      "coffeeHint": "Open Buy Me a Coffee, right-click to copy the link."
-    },
     "linkHint": "Click to open, right-click to copy the link.",
     "madeBy": "Made by {0}",
     "version": "v {0}",
     "community": "Community",
-    "discordTitle": "Join the Discord",
-    "discordBody": "Get help, report bugs, share ideas and hear about updates first.",
     "githubTitle": "View on GitHub",
     "githubBody": "Browse the source code and every release.",
     "reminder": {
@@ -565,7 +555,7 @@
       "behavior": "Behavior",
       "behaviorHelp": "How the bot positions itself and picks its fights.",
       "manualMovement": "Steer yourself",
-      "manualMovementHelp": "You move the character and the plugin does the rest: targets, rotation, Limit Break and the queue. It never paths, mounts, dodges or dashes for you, and cast-time skills wait until you stand still. Switch it any time, even mid-match, or type /apsg steer.",
+      "manualMovementHelp": "You move the character and the plugin does the rest: targets, rotation, Limit Break and the queue. It never paths, mounts, dodges or dashes for you, and cast-time skills wait until you stand still. Switch it any time, even mid-match, or type /psa steer.",
       "reactionTime": "Human-like play",
       "reactionTimeHelp": "Adds human reaction delays and gives each match its own play style: route, spacing, gate timing and mount habits. Bots in the same match stop moving in lockstep.",
       "recordMatches": "Record matches",
@@ -784,7 +774,7 @@
     "footnote": "Ventures cost 100 Wolf Marks each. Shopping needs the Wolves' Den Pier aetheryte attuned.",
     "chatStart": "Shopping at Wolves' Den Pier: {0}.",
     "chatDone": "Shopping done: {0}.",
-    "chatNothingBought": "The shopping trip ended without buying anything. /apsg log has the details.",
+    "chatNothingBought": "The shopping trip ended without buying anything. /psa log has the details.",
     "chatFailed": "The shopping trip stopped: {0}",
     "chatBusy": "Shopping skipped: finish the duty, fight or queue first.",
     "quantityItem": "{0} × {1}"
@@ -823,8 +813,8 @@
     "steering": "You steer"
   },
   "plugin": {
-    "commandHelp": "Toggle the Auto PVP Series Grind window. /apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
-    "commandHelpAlias": "Alias for /apsg.",
+    "commandHelp": "Toggle the PVP Series Autopilot window. /psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
+    "commandHelpAlias": "Alias for /psa.",
     "steerOn": "You steer now. The plugin keeps targeting and fighting.",
     "steerOff": "The plugin steers again.",
     "noRun": "No run in progress.",
