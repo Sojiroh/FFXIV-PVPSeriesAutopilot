@@ -2,10 +2,10 @@ namespace AutoPvpSeriesGrind.Core;
 
 internal static class ApsgConstants
 {
-    public const string PrimaryCommand = "/apsg";
-    public const string AliasCommand = "/pvpseries";
+    public const string PrimaryCommand = "/psa";
+    public const string AliasCommand = "/pvpautopilot";
 
-    public const string LogPrefix = "[APSG]";
+    public const string LogPrefix = "[PSA]";
 
     // Crystalline Conflict objective, matched by BNpcName row id: the row carries a separate name per
     // client language, so comparing against the English text finds nothing on a non-English client.

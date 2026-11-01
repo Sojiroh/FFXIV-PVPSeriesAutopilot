@@ -358,7 +358,7 @@
     },
     "r2900": {
       "1": "Tab „Einkaufen“ hinzugefügt: gibt Wolfsmarken und Kristalltrophäen am Wolfshöhlen-Pier nach deiner Liste aus; übrige Wolfsmarken gehen an Wertmarken",
-      "2": "„Selbst steuern“ hinzugefügt: Du bewegst die Figur, das Plugin wählt weiter Ziele, kämpft und meldet an (Einstellungen oder /apsg steer)",
+      "2": "„Selbst steuern“ hinzugefügt: Du bewegst die Figur, das Plugin wählt weiter Ziele, kämpft und meldet an (Einstellungen oder /psa steer)",
       "3": "Verbessert: „Menschliches Spiel“ gibt jedem Match eigene Wege, Abstände, Tor-Timing und Reitgewohnheiten, damit Bots im selben Match nicht mehr im Gleichschritt laufen",
       "4": "Behoben: ständiges Auf- und Absteigen, Hängenbleiben an unerreichbaren Stellen und Laufen ins Eis in Frontline"
     },
@@ -429,7 +429,7 @@
       "15": "Teamfolgen in Frontline und Rival Wings verbessert: Der Bot läuft nicht mehr quer über die Karte zu einer nur wenig größeren Gruppe, berücksichtigt die Entfernung einer Gruppe, bevor er sich ihr anschließt, und steht dort, wo das Team wirklich dicht ist, statt in der Mitte einer langgezogenen Kolonne",
       "16": "Rückzug in Crystalline Conflict verbessert: Nach dem Zurückfallen wartet der Bot, bis er einen Moment lang keinen Schaden mehr nimmt, bevor er wieder angreift, statt sofort zurück in den Kampf zu laufen, sobald seine HP wieder reichen",
       "17": "Behoben: Die Gesamtstatistik wurde gelöscht, wenn die Verlaufsdatei beschädigt war, etwa durch einen Absturz beim Speichern; der Verlauf wird jetzt sicher gespeichert, und eine unlesbare Datei bleibt als run-history.corrupt.json erhalten, statt überschrieben zu werden",
-      "18": "/apsg start, stop, finish und status hinzugefügt: Ein Makro kann damit einen Lauf starten, beenden, nach dem aktuellen Match beenden oder den Stand ausgeben",
+      "18": "/psa start, stop, finish und status hinzugefügt: Ein Makro kann damit einen Lauf starten, beenden, nach dem aktuellen Match beenden oder den Stand ausgeben",
       "19": "Behoben: Der Bot stand ein ganzes Crystalline-Conflict-Match lang im Startbereich, wenn der Match-Timer nicht lesbar war, etwa direkt nach einem Spiel-Patch; nach einer Minute ohne lesbaren Timer startet er das Match jetzt trotzdem",
       "20": "Behoben: Die gewonnene Serien-EP zeigte deine gesamte Serien-EP an, wenn ein Lauf startete, bevor dein PvP-Profil geladen war",
       "21": "Bloodbath und Swift verbessert: Bloodbath wartet jetzt auf einen Gegner in Nahkampfreichweite, weil die Heilung aus deinen Treffern kommt, und Swift wird eingesetzt, um zum Ziel aufzuschließen, statt wenn du schon daneben stehst",
@@ -438,25 +438,15 @@
     },
     "r21310": {
       "1": "Behoben: Die Schalter LB-Modus und Schwellenwerttyp in den Limitrausch-Einstellungen schnitten in längeren Sprachen ihre Beschriftung ab; sie werden jetzt breit genug für den Text",
-      "2": "/apsg reset hinzugefügt: Holt das Fenster in Standardgröße zurück auf den Bildschirm, falls es außerhalb gelandet oder zu groß zum Greifen ist",
+      "2": "/psa reset hinzugefügt: Holt das Fenster in Standardgröße zurück auf den Bildschirm, falls es außerhalb gelandet oder zu groß zum Greifen ist",
       "3": "Übersetzungen verbessert: Statuszeile, Stoppgründe und die Chat-Meldungen eines Laufs folgen jetzt der Plugin-Sprache, statt immer Englisch zu sein"
     }
   },
   "about": {
-    "support": {
-      "title": "Mit Liebe und Sorgfalt gemacht",
-      "body": "Dieses Plugin ist ein Ein-Personen-Projekt, entstanden in meiner Freizeit, weil ich dieses Spiel und seine Community liebe. Es aktuell zu halten, kostet viele dieser Stunden. Wenn es dir geholfen hat, sorgt deine Unterstützung auf Patreon oder ein spendierter Kaffee dafür, dass ich ihm diese Zeit weiter schenken kann. Danke, dass du hier bist.",
-      "button": "Auf Patreon unterstützen",
-      "hint": "Patreon öffnen, Rechtsklick kopiert den Link.",
-      "coffeeButton": "Einen Kaffee spendieren",
-      "coffeeHint": "Buy Me a Coffee öffnen, Rechtsklick kopiert den Link."
-    },
     "linkHint": "Klicken zum Öffnen, Rechtsklick kopiert den Link.",
     "madeBy": "Erstellt von {0}",
     "version": "v {0}",
     "community": "Community",
-    "discordTitle": "Tritt dem Discord bei",
-    "discordBody": "Hol dir Hilfe, melde Fehler, teile Ideen und erfahre als Erstes von Updates.",
     "githubTitle": "Auf GitHub ansehen",
     "githubBody": "Stöbere im Quellcode und in allen Versionen.",
     "reminder": {
@@ -565,7 +555,7 @@
       "behavior": "Verhalten",
       "behaviorHelp": "Wie der Bot sich positioniert und seine Kämpfe wählt.",
       "manualMovement": "Selbst steuern",
-      "manualMovementHelp": "Du bewegst den Charakter, das Plugin erledigt den Rest: Ziele, Rotation, Limitrausch und die Warteschlange. Es läuft, reitet, weicht und stürmt nie für dich, und Fähigkeiten mit Wirkzeit warten, bis du stillstehst. Jederzeit umschaltbar, auch mitten im Match, oder tippe /apsg steer.",
+      "manualMovementHelp": "Du bewegst den Charakter, das Plugin erledigt den Rest: Ziele, Rotation, Limitrausch und die Warteschlange. Es läuft, reitet, weicht und stürmt nie für dich, und Fähigkeiten mit Wirkzeit warten, bis du stillstehst. Jederzeit umschaltbar, auch mitten im Match, oder tippe /psa steer.",
       "reactionTime": "Menschliches Spiel",
       "reactionTimeHelp": "Fügt menschliche Reaktionsverzögerungen hinzu und gibt jedem Match einen eigenen Spielstil: Route, Abstand, Timing am Tor und Reitgewohnheiten. Bots im selben Match bewegen sich nicht mehr im Gleichschritt.",
       "recordMatches": "Matches aufzeichnen",
@@ -784,7 +774,7 @@
     "footnote": "Wertmarken kosten je 100 Wolfsmarken. Zum Einkaufen brauchst du den Ätheryten am Wolfshöhlen-Pier als Teleportziel.",
     "chatStart": "Einkauf am Wolfshöhlen-Pier: {0}.",
     "chatDone": "Einkauf erledigt: {0}.",
-    "chatNothingBought": "Der Einkauf endete, ohne etwas zu kaufen. Details stehen in /apsg log.",
+    "chatNothingBought": "Der Einkauf endete, ohne etwas zu kaufen. Details stehen in /psa log.",
     "chatFailed": "Der Einkauf wurde abgebrochen: {0}",
     "chatBusy": "Einkauf übersprungen: Beende zuerst den Inhalt, den Kampf oder die Warteschlange.",
     "quantityItem": "{0} × {1}"
@@ -823,8 +813,8 @@
     "steering": "Du steuerst"
   },
   "plugin": {
-    "commandHelp": "Öffnet oder schließt das Auto PVP Series Grind Fenster. /apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
-    "commandHelpAlias": "Alias für /apsg.",
+    "commandHelp": "Öffnet oder schließt das PVP Series Autopilot Fenster. /psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
+    "commandHelpAlias": "Alias für /psa.",
     "steerOn": "Du steuerst jetzt. Das Plugin wählt weiter Ziele und kämpft.",
     "steerOff": "Das Plugin steuert wieder.",
     "noRun": "Kein Lauf aktiv.",

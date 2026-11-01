@@ -10,12 +10,14 @@ namespace AutoPvpSeriesGrind.Windows.Pages;
 
 internal sealed partial class AboutPage
 {
-    private const string Name = "Auto PVP Series Grind";
-    private const string Author = "XeldarAlz";
-    private const string RepoUrl = "https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind";
-    private const string DiscordUrl = "https://discord.gg/hppkAvdBEE";
-    private const string PatreonUrl = "https://www.patreon.com/XeldarAlz";
-    private const string BuyMeACoffeeUrl = "https://buymeacoffee.com/xeldaralz";
+    private const string Name = "PVP Series Autopilot";
+    private const string Author = "Sojiroh";
+    private const string RepoUrl = "https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot";
+
+    // Attribution required by the NOTICE of the original project; never translated or altered.
+    private const string CreditText = "Based on Auto PVP Series Grind by XeldarAlz";
+    private const string CreditUrl = "https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind";
+    private static readonly string[] CreditLines = [CreditText, CreditUrl];
 
     private const float MaxColumnWidth = 860f;
     private const float SectionGap = 22f;
@@ -53,9 +55,7 @@ internal sealed partial class AboutPage
         Styling.VSpace(SectionGap);
         RevealSection(1, DrawCommunity);
         Styling.VSpace(SectionGap);
-        RevealSection(2, DrawSupport);
-        Styling.VSpace(SectionGap);
-        RevealSection(3, DrawFooter);
+        RevealSection(2, DrawFooter);
         Styling.VSpace(SectionGap);
     }
 
@@ -265,7 +265,16 @@ internal sealed partial class AboutPage
         TextDraw.Icon(FontAwesomeIcon.Code, new Vector2(x, origin.Y + (labelSize.Y - iconSize.Y) * 0.5f),
             Vector4.Lerp(Styling.AccentBlue, Styling.Lighten(Styling.AccentBlueSoft, 0.3f), twinkle));
         TextDraw.At(label, new Vector2(x + iconSize.X + gap, origin.Y), Styling.TextDim);
-        ImGui.Dummy(new Vector2(columnWidth, labelSize.Y));
+
+        var lineY = origin.Y + labelSize.Y + gap;
+        foreach (var line in CreditLines)
+        {
+            var lineSize = TextDraw.Measure(line);
+            TextDraw.At(line, new Vector2(origin.X + (columnWidth - lineSize.X) * 0.5f, lineY), Styling.TextDim);
+            lineY += lineSize.Y;
+        }
+
+        ImGui.Dummy(new Vector2(columnWidth, lineY - origin.Y));
     }
 
     private static void SectionHeader(FontAwesomeIcon icon, string label, Vector4 accent, float width)

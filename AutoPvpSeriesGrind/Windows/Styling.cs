@@ -10,7 +10,6 @@ internal static class Styling
     public static readonly Vector4 AccentArc         = new(0.239f, 0.545f, 1.000f, 1.00f);
     public static readonly Vector4 AccentArcSoft     = new(0.498f, 0.706f, 1.000f, 1.00f);
     public static readonly Vector4 AccentMagenta     = new(0.886f, 0.310f, 0.784f, 1.00f);
-    public static readonly Vector4 AccentMagentaSoft = new(0.961f, 0.522f, 0.867f, 1.00f);
     public static readonly Vector4 AccentMint        = new(0.46f, 0.86f, 0.66f, 1.00f);
     public static readonly Vector4 AccentMintSoft    = new(0.66f, 0.96f, 0.80f, 1.00f);
     public static readonly Vector4 AccentAmber       = new(0.92f, 0.74f, 0.34f, 1.00f);
@@ -19,12 +18,6 @@ internal static class Styling
     public static readonly Vector4 AccentRoseSoft    = new(1.00f, 0.62f, 0.68f, 1.00f);
     public static readonly Vector4 AccentBlue        = new(0.46f, 0.62f, 0.92f, 1.00f);
     public static readonly Vector4 AccentBlueSoft    = new(0.66f, 0.78f, 0.98f, 1.00f);
-    public static readonly Vector4 AccentDiscord     = new(0.345f, 0.396f, 0.949f, 1.00f);
-    public static readonly Vector4 AccentPatreon     = new(1.000f, 0.259f, 0.302f, 1.00f);
-    public static readonly Vector4 AccentPatreonSoft = new(1.000f, 0.580f, 0.600f, 1.00f);
-    public static readonly Vector4 AccentCoffee     = new(1.000f, 0.867f, 0.000f, 1.00f);
-    public static readonly Vector4 AccentCoffeeDeep = new(1.000f, 0.690f, 0.130f, 1.00f);
-    public static readonly Vector4 InkOnCoffee      = new(0.130f, 0.090f, 0.040f, 1.00f);
 
     public static readonly Vector4 WindowBg = new(0.043f, 0.052f, 0.098f, 0.985f);
     public static readonly Vector4 Surface0 = new(0.068f, 0.082f, 0.142f, 1.00f);

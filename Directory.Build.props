@@ -11,11 +11,11 @@
 
   <PropertyGroup Label="Identity">
     <Version>2.13.1.0</Version>
-    <Authors>XeldarAlz</Authors>
-    <Copyright>Copyright (c) XeldarAlz</Copyright>
-    <PackageProjectUrl>https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind</PackageProjectUrl>
+    <Authors>Sojiroh</Authors>
+    <Copyright>Copyright (c) XeldarAlz, Sojiroh</Copyright>
+    <PackageProjectUrl>https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 

@@ -49,7 +49,7 @@ internal static unsafe class TargetDumper
         var target = TargetSystem.Instance()->Target;
         if (target == null)
         {
-            ApsgChat.Print("No target. Click an NPC or FATE marker first, then re-run /apsg target.");
+            ApsgChat.Print($"No target. Click an NPC or FATE marker first, then re-run {ApsgConstants.PrimaryCommand} target.");
             return;
         }
 

@@ -1,13 +1,13 @@
 [
   {
-    "Author": "XeldarAlz",
-    "Name": "Auto PVP Series Grind",
-    "InternalName": "AutoPvpSeriesGrind",
+    "Author": "Sojiroh",
+    "Name": "PVP Series Autopilot",
+    "InternalName": "PvpSeriesAutopilot",
     "AssemblyVersion": "2.13.1.0",
     "TestingAssemblyVersion": "2.13.1.0",
-    "Description": "Grinds PvP Series Malmstones in Crystalline Conflict Casual or Ranked Matches, or Frontline, with preview infantry support for Rival Wings (Hidden Gorge). Queues and plays until your goal is met.",
+    "Description": "Grinds PvP Series Malmstones in Crystalline Conflict Casual or Ranked Matches, or Frontline, with preview infantry support for Rival Wings (Hidden Gorge). Queues and plays until your goal is met. Based on Auto PVP Series Grind by XeldarAlz.",
     "Punchline": "PvP Series, grinded for you.",
-    "RepoUrl": "https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind",
+    "RepoUrl": "https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot",
     "ApplicableVersion": "any",
     "Tags": [
       "PVP",
@@ -23,13 +23,13 @@
       "utility"
     ],
     "DalamudApiLevel": 15,
-    "IconUrl": "https://raw.githubusercontent.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind/master/AutoPvpSeriesGrind/Images/Icon.png",
-    "DownloadLinkInstall": "https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind/releases/latest/download/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind/releases/latest/download/latest.zip",
-    "DownloadLinkTesting": "https://github.com/XeldarAlz/FFXIV-AutoPVPSeriesGrind/releases/latest/download/latest.zip",
+    "IconUrl": "https://raw.githubusercontent.com/Sojiroh/FFXIV-PVPSeriesAutopilot/master/AutoPvpSeriesGrind/Images/Icon.png",
+    "DownloadLinkInstall": "https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot/releases/latest/download/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot/releases/latest/download/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Sojiroh/FFXIV-PVPSeriesAutopilot/releases/latest/download/latest.zip",
     "IsTestingExclusive": false,
     "AcceptsFeedback": true,
-    "DownloadCount": 22551,
+    "DownloadCount": 0,
     "LastUpdate": "1792849223"
   }
 ]

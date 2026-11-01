@@ -358,7 +358,7 @@
     },
     "r2900": {
       "1": "新增“购物”标签页：按你的清单在狼狱停船场花费狼印战绩和奖杯水晶，剩余的狼印战绩用于探险币",
-      "2": "新增“自己操控移动”：由你移动角色，插件继续选择目标、战斗和排队（设置或 /apsg steer）",
+      "2": "新增“自己操控移动”：由你移动角色，插件继续选择目标、战斗和排队（设置或 /psa steer）",
       "3": "改进：“拟人操作”让每场比赛有各自的路线、间距、出发时机和坐骑习惯，同一场比赛的机器人不再步调一致",
       "4": "修复：反复上下坐骑、卡在无法到达的位置，以及在纷争前线走进冰里"
     },
@@ -429,7 +429,7 @@
       "15": "改进纷争前线和群翼纷争中的跟随队伍：机器人不再为了一个只比当前大一点的队伍横穿地图，加入前会考虑距离，并站在队伍真正密集的位置，而不是拉长队列的中间",
       "16": "改进 Crystalline Conflict 中的撤退：撤退后，机器人会等到一段时间不再受到伤害才重新上前，而不是 HP 一恢复就立刻冲回战斗",
       "17": "修复：历史文件损坏时（例如保存时崩溃）累计统计会被清空的问题。现在会安全地保存历史，无法读取的文件会保留为 run-history.corrupt.json，而不是被覆盖",
-      "18": "新增 /apsg start、stop、finish 和 status：宏可以开始运行、停止运行、在本场比赛后结束，或显示当前状态",
+      "18": "新增 /psa start、stop、finish 和 status：宏可以开始运行、停止运行、在本场比赛后结束，或显示当前状态",
       "19": "修复：无法读取比赛计时器时（例如游戏刚更新后），机器人会在出生点站完整场 Crystalline Conflict 比赛的问题。计时器连续一分钟无法读取时，会直接开始比赛",
       "20": "修复：在 PvP 资料加载前开始运行时，获得的系列经验会显示为你的全部系列经验的问题",
       "21": "改进 Bloodbath 和 Swift：Bloodbath 的治疗来自你的攻击，现在会等近战范围内有敌人时再用；Swift 用来拉近与目标的距离，而不是在已经贴身时使用",
@@ -438,25 +438,15 @@
     },
     "r21310": {
       "1": "修复：极限技设置中的“极限技模式”和“阈值类型”按钮在文字较长的语言下会截断标签的问题，现在会加宽以容纳文字",
-      "2": "新增 /apsg reset：窗口跑到屏幕外或大到无法拖动时，以默认大小把它放回屏幕内",
+      "2": "新增 /psa reset：窗口跑到屏幕外或大到无法拖动时，以默认大小把它放回屏幕内",
       "3": "改进翻译：运行时的状态栏、停止原因和聊天消息现在会使用插件语言，而不再总是英文"
     }
   },
   "about": {
-    "support": {
-      "title": "用爱与用心打造",
-      "body": "这个插件是我一个人的项目，因为热爱这款游戏和它的社区，我在业余时间制作了它。保持更新需要花费大量这样的时间。如果它帮到了你，在 Patreon 上支持我或请我喝杯咖啡，就能让我继续为它投入这些时间。谢谢你的到来。",
-      "button": "在Patreon上支持",
-      "hint": "打开 Patreon，右键复制链接。",
-      "coffeeButton": "请我喝杯咖啡",
-      "coffeeHint": "打开 Buy Me a Coffee，右键复制链接。"
-    },
     "linkHint": "点击打开，右键复制链接。",
     "madeBy": "作者：{0}",
     "version": "v {0}",
     "community": "社区",
-    "discordTitle": "加入 Discord",
-    "discordBody": "获取帮助、报告错误、分享想法，并第一时间了解更新。",
     "githubTitle": "在 GitHub 上查看",
     "githubBody": "浏览源代码和所有版本。",
     "reminder": {
@@ -565,7 +555,7 @@
       "behavior": "行为",
       "behaviorHelp": "机器人如何走位、如何挑选战斗。",
       "manualMovement": "自己操控移动",
-      "manualMovementHelp": "由你移动角色，其余交给插件：选择目标、输出循环、极限技和排队。插件不会替你寻路、上坐骑、闪避或突进，有咏唱的技能会等你站定后再用。随时可以切换，对战中也行，或输入 /apsg steer。",
+      "manualMovementHelp": "由你移动角色，其余交给插件：选择目标、输出循环、极限技和排队。插件不会替你寻路、上坐骑、闪避或突进，有咏唱的技能会等你站定后再用。随时可以切换，对战中也行，或输入 /psa steer。",
       "reactionTime": "拟人操作",
       "reactionTimeHelp": "加入接近真人的反应延迟，并让每场对战都有自己的风格：路线、间距、出门时机和上坐骑的习惯。同一场对战中的机器人不再步调一致。",
       "recordMatches": "记录比赛",
@@ -784,7 +774,7 @@
     "footnote": "探险币每枚100狼印战绩。购物需要已在狼狱停船场的以太之光登记。",
     "chatStart": "在狼狱停船场购物：{0}。",
     "chatDone": "购物完成：{0}。",
-    "chatNothingBought": "购物结束，但没有买到任何东西。详情见 /apsg log。",
+    "chatNothingBought": "购物结束，但没有买到任何东西。详情见 /psa log。",
     "chatFailed": "购物已中止：{0}",
     "chatBusy": "已跳过购物：请先结束副本、战斗或排队。",
     "quantityItem": "{1}×{0}"
@@ -823,8 +813,8 @@
     "steering": "手动移动"
   },
   "plugin": {
-    "commandHelp": "开关 Auto PVP Series Grind 窗口。/apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer。",
-    "commandHelpAlias": "/apsg 的别名。",
+    "commandHelp": "开关 PVP Series Autopilot 窗口。/psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer。",
+    "commandHelpAlias": "/psa 的别名。",
     "steerOn": "现在由你移动。插件继续选择目标并战斗。",
     "steerOff": "插件重新接管移动。",
     "noRun": "当前没有运行。",

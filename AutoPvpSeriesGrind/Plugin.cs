@@ -30,7 +30,7 @@ public sealed class Plugin : IDalamudPlugin
 
     internal Configuration Configuration { get; }
     internal static Configuration Cfg { get; private set; } = null!;
-    internal WindowSystem WindowSystem { get; } = new("AutoPvpSeriesGrind");
+    internal WindowSystem WindowSystem { get; } = new("PvpSeriesAutopilot");
     internal RunHistory History { get; }
     internal AutoPvpSeriesController Controller { get; }
     internal LimitBreakController LimitBreak { get; }

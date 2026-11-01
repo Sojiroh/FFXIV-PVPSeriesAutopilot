@@ -59,7 +59,7 @@ public sealed class AppWindow : Window, IDisposable
     private IDisposable? chrome;
     private IDisposable? bodyFont;
 
-    public AppWindow(Plugin plugin) : base("Auto PVP Series Grind###AutoPvpSeriesGrindMain", BaseFlags)
+    public AppWindow(Plugin plugin) : base("PVP Series Autopilot###PvpSeriesAutopilotMain", BaseFlags)
     {
         this.plugin = plugin;
         Size = DefaultSize;

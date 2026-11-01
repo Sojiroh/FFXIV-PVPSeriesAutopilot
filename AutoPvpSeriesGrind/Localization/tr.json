@@ -358,7 +358,7 @@
     },
     "r2900": {
       "1": "\"Alışveriş\" sekmesi eklendi: listene göre Wolves' Den Pier'da Wolf Marks ve Trophy Crystals harcar; artan Wolf Marks Ventures'a gider",
-      "2": "\"Kendin yönet\" eklendi: karakteri sen hareket ettirirsin, eklenti hedef seçmeye, savaşmaya ve sıraya girmeye devam eder (ayarlar veya /apsg steer)",
+      "2": "\"Kendin yönet\" eklendi: karakteri sen hareket ettirirsin, eklenti hedef seçmeye, savaşmaya ve sıraya girmeye devam eder (ayarlar veya /psa steer)",
       "3": "İyileştirildi: \"İnsan gibi oyun\" her maça kendi rotalarını, mesafelerini, çıkış zamanlamasını ve binek alışkanlıklarını verir; aynı maçtaki botlar artık aynı anda hareket etmez",
       "4": "Düzeltildi: Sürekli binip inme, ulaşılamayan noktalarda takılma ve Frontline'da buza girme"
     },
@@ -429,7 +429,7 @@
       "15": "Frontline ve Rival Wings'te takımı takip etme iyileştirildi: bot artık kendi grubundan yalnızca biraz büyük bir grup için haritayı boydan boya geçmiyor, katılmadan önce grubun uzaklığını da hesaba katıyor ve uzamış bir kolonun ortası yerine takımın gerçekten toplandığı yerde duruyor",
       "16": "Crystalline Conflict'te geri çekilme iyileştirildi: bot geri çekildikten sonra, HP'si toparlanır toparlanmaz kavgaya geri dalmak yerine bir süre hasar almayana kadar bekliyor",
       "17": "Düzeltildi: Geçmiş dosyası, örneğin kayıt sırasında bir çökmeyle bozulduğunda toplam istatistikler siliniyordu; geçmiş artık güvenli şekilde kaydediliyor ve okunamayan dosya üzerine yazılmak yerine run-history.corrupt.json olarak saklanıyor",
-      "18": "/apsg start, stop, finish ve status eklendi: bir makro artık çalışmayı başlatabilir, durdurabilir, mevcut maçtan sonra bitirebilir ya da durumunu yazdırabilir",
+      "18": "/psa start, stop, finish ve status eklendi: bir makro artık çalışmayı başlatabilir, durdurabilir, mevcut maçtan sonra bitirebilir ya da durumunu yazdırabilir",
       "19": "Düzeltildi: Maç sayacı okunamadığında, örneğin bir oyun yamasından hemen sonra, bot bütün bir Crystalline Conflict maçı boyunca başlangıç noktasında bekliyordu; bir dakika boyunca sayaç okunamazsa artık maça yine de başlıyor",
       "20": "Düzeltildi: PvP profiliniz yüklenmeden başlayan bir çalışmada kazanılan Seri EXP'si toplam Seri EXP'nizin tamamını gösteriyordu",
       "21": "Bloodbath ve Swift iyileştirildi: Bloodbath iyileştirmesi vuruşlarından geldiği için artık yakın mesafede bir düşman bekliyor, Swift ise hedefin yanındayken değil, hedefle aradaki mesafeyi kapatmak için kullanılıyor",
@@ -438,25 +438,15 @@
     },
     "r21310": {
       "1": "Düzeltildi: Limit Break ayarlarındaki LB modu ve Eşik türü düğmeleri uzun dillerde etiketlerini kesiyordu; artık metne sığacak kadar genişliyorlar",
-      "2": "/apsg reset eklendi: pencere ekran dışına çıkarsa ya da tutulamayacak kadar büyürse onu varsayılan boyutunda ekrana geri getiriyor",
+      "2": "/psa reset eklendi: pencere ekran dışına çıkarsa ya da tutulamayacak kadar büyürse onu varsayılan boyutunda ekrana geri getiriyor",
       "3": "Çeviriler iyileştirildi: durum satırı, durma nedenleri ve çalışmanın sohbete yazdığı mesajlar artık hep İngilizce yerine eklentinin dilini izliyor"
     }
   },
   "about": {
-    "support": {
-      "title": "Sevgi ve özenle yapıldı",
-      "body": "Bu eklenti, bu oyunu ve topluluğunu sevdiğim için boş zamanlarımda tek başıma geliştirdiğim bir proje. Onu güncel tutmak o saatlerin çoğunu alıyor. Size yardımcı olduysa, Patreon'da destek olmanız ya da bana bir kahve ısmarlamanız ona bu zamanı ayırmaya devam etmemi sağlar. Burada olduğunuz için teşekkürler.",
-      "button": "Patreon'da destekle",
-      "hint": "Patreon'u aç, bağlantıyı kopyalamak için sağ tıkla.",
-      "coffeeButton": "Bana bir kahve ısmarla",
-      "coffeeHint": "Buy Me a Coffee'yi aç, bağlantıyı kopyalamak için sağ tıkla."
-    },
     "linkHint": "Açmak için tıkla, bağlantıyı kopyalamak için sağ tıkla.",
     "madeBy": "{0} tarafından yapıldı",
     "version": "v {0}",
     "community": "Topluluk",
-    "discordTitle": "Discord'a katıl",
-    "discordBody": "Yardım alın, hata bildirin, fikirlerinizi paylaşın ve güncellemeleri ilk siz duyun.",
     "githubTitle": "GitHub'da görüntüle",
     "githubBody": "Kaynak koduna ve tüm sürümlere göz atın.",
     "reminder": {
@@ -565,7 +555,7 @@
       "behavior": "Davranış",
       "behaviorHelp": "Botun nasıl konumlandığı ve hangi kavgaları seçtiği.",
       "manualMovement": "Kendin yönet",
-      "manualMovementHelp": "Karakteri sen hareket ettirirsin, gerisini eklenti yapar: hedefler, rotasyon, Limit Break ve sıra. Senin yerine asla yürümez, bineğe binmez, kaçmaz veya atılmaz; döküm süreli yetenekler sen durana kadar bekler. İstediğin zaman, maç ortasında bile değiştir ya da /apsg steer yaz.",
+      "manualMovementHelp": "Karakteri sen hareket ettirirsin, gerisini eklenti yapar: hedefler, rotasyon, Limit Break ve sıra. Senin yerine asla yürümez, bineğe binmez, kaçmaz veya atılmaz; döküm süreli yetenekler sen durana kadar bekler. İstediğin zaman, maç ortasında bile değiştir ya da /psa steer yaz.",
       "reactionTime": "İnsan gibi oyun",
       "reactionTimeHelp": "İnsana benzer tepki gecikmeleri ekler ve her maça kendi oyun tarzını verir: rota, mesafe, kapıdan çıkış zamanı ve binek alışkanlıkları. Aynı maçtaki botlar artık aynı anda aynı hareketi yapmaz.",
       "recordMatches": "Maçları kaydet",
@@ -784,7 +774,7 @@
     "footnote": "Her Venture 100 Wolf Marks eder. Alışveriş için Wolves' Den Pier aetheryte'ının ışınlanma noktası olarak açık olması gerekir.",
     "chatStart": "Wolves' Den Pier'da alışveriş: {0}.",
     "chatDone": "Alışveriş bitti: {0}.",
-    "chatNothingBought": "Alışveriş hiçbir şey alınmadan bitti. Ayrıntılar /apsg log'da.",
+    "chatNothingBought": "Alışveriş hiçbir şey alınmadan bitti. Ayrıntılar /psa log'da.",
     "chatFailed": "Alışveriş durdu: {0}",
     "chatBusy": "Alışveriş atlandı: önce içeriği, savaşı ya da sırayı bitir.",
     "quantityItem": "{0} × {1}"
@@ -823,8 +813,8 @@
     "steering": "Sen yönetiyorsun"
   },
   "plugin": {
-    "commandHelp": "Auto PVP Series Grind penceresini açar veya kapatır. /apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
-    "commandHelpAlias": "/apsg için kısayol.",
+    "commandHelp": "PVP Series Autopilot penceresini açar veya kapatır. /psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.",
+    "commandHelpAlias": "/psa için kısayol.",
     "steerOn": "Artık sen yönetiyorsun. Eklenti hedef seçmeye ve savaşmaya devam ediyor.",
     "steerOff": "Eklenti yeniden yönetiyor.",
     "noRun": "Devam eden bir çalışma yok.",

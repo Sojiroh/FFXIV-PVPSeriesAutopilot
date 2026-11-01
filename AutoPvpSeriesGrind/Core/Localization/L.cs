@@ -384,7 +384,7 @@ internal static class L
         public static readonly LocString[] Release21310 =
         [
             new("changelog.r21310.1", "Fixed the LB mode and Threshold type buttons in the Limit Break settings cutting off their labels in longer languages: they now widen to fit"),
-            new("changelog.r21310.2", "Added /apsg reset, which brings the window back on screen at its default size if it ended up off screen or too large to grab"),
+            new("changelog.r21310.2", "Added /psa reset, which brings the window back on screen at its default size if it ended up off screen or too large to grab"),
             new("changelog.r21310.3", "Improved translations: the status line, stop reasons and the chat messages a run prints now follow the plugin language instead of always being in English"),
         ];
 
@@ -407,7 +407,7 @@ internal static class L
             new("changelog.r21300.15", "Improved Frontline and Rival Wings team following: the bot no longer crosses the map for a group only slightly bigger than the one it is with, weighs how far a group is before joining it, and stands where the team is actually packed instead of the middle of a stretched-out column"),
             new("changelog.r21300.16", "Improved retreating in Crystalline Conflict: after falling back, the bot waits until it has gone a moment without taking damage before going back in, instead of walking straight back into the fight the instant its HP recovers"),
             new("changelog.r21300.17", "Fixed lifetime stats being wiped when the history file got damaged, for example by a crash mid-save: history is now saved safely, and an unreadable file is kept as run-history.corrupt.json instead of being overwritten"),
-            new("changelog.r21300.18", "Added /apsg start, stop, finish and status, so a macro can start a run, end it, finish after the current match or print where it stands"),
+            new("changelog.r21300.18", "Added /psa start, stop, finish and status, so a macro can start a run, end it, finish after the current match or print where it stands"),
             new("changelog.r21300.19", "Fixed the bot standing in spawn for a whole Crystalline Conflict match when the match timer could not be read, for example right after a game patch: after a minute without a readable timer it starts the match anyway"),
             new("changelog.r21300.20", "Fixed Series EXP gained showing your entire Series total when a run started before your PvP profile had loaded"),
             new("changelog.r21300.21", "Improved Bloodbath and Swift: Bloodbath now waits for an enemy in melee range, since its healing comes from your hits, and Swift is used to close the gap to your target instead of while already next to it"),
@@ -455,7 +455,7 @@ internal static class L
         public static readonly LocString[] Release2900 =
         [
             new("changelog.r2900.1", "Added a Shopping tab that spends Wolf Marks and Trophy Crystals at Wolves' Den Pier from your list, with leftover Wolf Marks going to Ventures"),
-            new("changelog.r2900.2", "Added Steer yourself: you move the character while the plugin keeps targeting, fighting and queueing (settings or /apsg steer)"),
+            new("changelog.r2900.2", "Added Steer yourself: you move the character while the plugin keeps targeting, fighting and queueing (settings or /psa steer)"),
             new("changelog.r2900.3", "Improved Human-like play: each match gets its own routes, spacing, gate timing and mount habits, so bots in the same match no longer move in lockstep"),
             new("changelog.r2900.4", "Fixed mounting and dismounting over and over, getting stuck on unreachable spots, and walking into the ice in Frontline"),
         ];
@@ -495,18 +495,10 @@ internal static class L
 
     internal static class About
     {
-        public static readonly LocString SupportTitle = new("about.support.title", "Made with love and care");
-        public static readonly LocString SupportBody = new("about.support.body", "This plugin is a one-person project, built in my free time because I love this game and its community. Keeping it updated takes a lot of those hours. If it has helped you, supporting me on Patreon or buying me a coffee means I can keep giving it that time. Thank you for being here.");
-        public static readonly LocString SupportButton = new("about.support.button", "Support on Patreon");
-        public static readonly LocString PatreonHint = new("about.support.hint", "Open Patreon, right-click to copy the link.");
-        public static readonly LocString CoffeeButton = new("about.support.coffeeButton", "Buy me a coffee");
-        public static readonly LocString CoffeeHint = new("about.support.coffeeHint", "Open Buy Me a Coffee, right-click to copy the link.");
         public static readonly LocString LinkHint = new("about.linkHint", "Click to open, right-click to copy the link.");
         public static readonly LocString MadeBy = new("about.madeBy", "Made by {0}");
         public static readonly LocString Version = new("about.version", "v {0}");
         public static readonly LocString Community = new("about.community", "Community");
-        public static readonly LocString DiscordTitle = new("about.discordTitle", "Join the Discord");
-        public static readonly LocString DiscordBody = new("about.discordBody", "Get help, report bugs, share ideas and hear about updates first.");
         public static readonly LocString GitHubTitle = new("about.githubTitle", "View on GitHub");
         public static readonly LocString GitHubBody = new("about.githubBody", "Browse the source code and every release.");
         public static readonly LocString ReminderTitle = new("about.reminder.title", "A little reminder");
@@ -630,7 +622,7 @@ internal static class L
         public static readonly LocString TargetingCurrent = new("settings.targeting.current", "Your current target");
         public static readonly LocString TargetingCurrentHelp = new("settings.targeting.currentHelp", "Attacks whatever you have targeted and only picks for itself when you have nothing targeted.");
         public static readonly LocString ManualMovement = new("settings.combat.manualMovement", "Steer yourself");
-        public static readonly LocString ManualMovementHelp = new("settings.combat.manualMovementHelp", "You move the character and the plugin does the rest: targets, rotation, Limit Break and the queue. It never paths, mounts, dodges or dashes for you, and cast-time skills wait until you stand still. Switch it any time, even mid-match, or type /apsg steer.");
+        public static readonly LocString ManualMovementHelp = new("settings.combat.manualMovementHelp", "You move the character and the plugin does the rest: targets, rotation, Limit Break and the queue. It never paths, mounts, dodges or dashes for you, and cast-time skills wait until you stand still. Switch it any time, even mid-match, or type /psa steer.");
         public static readonly LocString ReactionTime = new("settings.combat.reactionTime", "Human-like play");
         public static readonly LocString ReactionTimeHelp = new("settings.combat.reactionTimeHelp", "Adds human reaction delays and gives each match its own play style: route, spacing, gate timing and mount habits. Bots in the same match stop moving in lockstep.");
         public static readonly LocString RecordMatches = new("settings.combat.recordMatches", "Record matches");
@@ -833,7 +825,7 @@ internal static class L
         public static readonly LocString Footnote = new("shop.footnote", "Ventures cost 100 Wolf Marks each. Shopping needs the Wolves' Den Pier aetheryte attuned.");
         public static readonly LocString ChatStart = new("shop.chatStart", "Shopping at Wolves' Den Pier: {0}.");
         public static readonly LocString ChatDone = new("shop.chatDone", "Shopping done: {0}.");
-        public static readonly LocString ChatNothingBought = new("shop.chatNothingBought", "The shopping trip ended without buying anything. /apsg log has the details.");
+        public static readonly LocString ChatNothingBought = new("shop.chatNothingBought", "The shopping trip ended without buying anything. /psa log has the details.");
         public static readonly LocString ChatFailed = new("shop.chatFailed", "The shopping trip stopped: {0}");
         public static readonly LocString ChatBusy = new("shop.chatBusy", "Shopping skipped: finish the duty, fight or queue first.");
         public static readonly LocString QuantityItem = new("shop.quantityItem", "{0} × {1}");
@@ -968,8 +960,8 @@ internal static class L
 
     internal static class Plugin
     {
-        public static readonly LocString CommandHelp = new("plugin.commandHelp", "Toggle the Auto PVP Series Grind window. /apsg start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.");
-        public static readonly LocString CommandHelpAlias = new("plugin.commandHelpAlias", "Alias for /apsg.");
+        public static readonly LocString CommandHelp = new("plugin.commandHelp", "Toggle the PVP Series Autopilot window. /psa start | stop | finish | status | config | stats | deps | log | changelog | about | reset | target | objects | steer.");
+        public static readonly LocString CommandHelpAlias = new("plugin.commandHelpAlias", "Alias for /psa.");
         public static readonly LocString SteerOn = new("plugin.steerOn", "You steer now. The plugin keeps targeting and fighting.");
         public static readonly LocString SteerOff = new("plugin.steerOff", "The plugin steers again.");
         public static readonly LocString NoRun = new("plugin.noRun", "No run in progress.");
