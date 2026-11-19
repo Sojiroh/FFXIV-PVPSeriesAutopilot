@@ -136,7 +136,7 @@ internal sealed partial class AutoPvpSeries
         {
             MatchState.SetTarget(targetId);
         }
-        rotation.Drive(snapshot, targetId, posture, snapshot.Self, manual.UnderBurst, holdStill);
+        rotation.Drive(snapshot, targetId, settings.PicksTargets, posture, snapshot.Self, manual.UnderBurst, holdStill);
     }
 
     private void KeepAutopilotReady(Vector3 self)
@@ -450,7 +450,7 @@ internal sealed partial class AutoPvpSeries
 
     private bool HoldsStillForRotation(PvpSnapshot snapshot, ulong targetId, Posture posture, Vector3 moveDestination, bool underBurst)
     {
-        var outcome = rotation.Drive(snapshot, targetId, posture, moveDestination, underBurst, holdStill);
+        var outcome = rotation.Drive(snapshot, targetId, settings.BrainTargets, posture, moveDestination, underBurst, holdStill);
         if (outcome != RotationOutcome.Cast)
         {
             return false;

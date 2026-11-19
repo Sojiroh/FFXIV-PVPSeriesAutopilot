@@ -1,5 +1,6 @@
 using AutoPvpSeriesGrind.Core.Combat;
 using AutoPvpSeriesGrind.Core.Game;
+using AutoPvpSeriesGrind.Core.Ipc;
 using AutoPvpSeriesGrind.Core.Localization;
 using AutoPvpSeriesGrind.Windows.Components;
 
@@ -20,7 +21,7 @@ internal static class CombatSettings
         CombatSetup.Draw(cfg, showSettingsLink: false);
         Styling.VSpace(12f);
         DrawCombatGroup(cfg, running);
-        if (cfg.RotationProvider == RotationProvider.Internal) DrawRotationGroup(cfg);
+        if (cfg.RotationProvider != RotationProvider.Manual) DrawRotationGroup(cfg);
     }
 
     private static void DrawCombatGroup(Configuration cfg, bool running)
@@ -114,6 +115,11 @@ internal static class CombatSettings
                 cfg.RotationProvider = RotationProviderChoices.All[choiceIndex].Provider;
                 cfg.SaveDebounced();
             }));
+
+        if (cfg.RotationProvider == RotationProvider.RotationSolver && !RotationSolverIpc.Instance.IsAvailable)
+        {
+            SettingsRow.Caption(Loc.T(L.Settings.RotationSolverMissing));
+        }
     }
 
     private static void DrawTargetingRow(Configuration cfg)
@@ -165,6 +171,9 @@ internal static class CombatSettings
             new(L.Settings.RotationBuiltIn,
                 L.Settings.RotationBuiltInHelp,
                 RotationProvider.Internal),
+            new(L.Settings.RotationSolver,
+                L.Settings.RotationSolverHelp,
+                RotationProvider.RotationSolver),
             new(L.Settings.RotationManual,
                 L.Settings.RotationManualHelp,
                 RotationProvider.Manual),

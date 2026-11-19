@@ -440,6 +440,10 @@
       "1": "Behoben: Die Schalter LB-Modus und Schwellenwerttyp in den Limitrausch-Einstellungen schnitten in längeren Sprachen ihre Beschriftung ab; sie werden jetzt breit genug für den Text",
       "2": "/psa reset hinzugefügt: Holt das Fenster in Standardgröße zurück auf den Bildschirm, falls es außerhalb gelandet oder zu groß zum Greifen ist",
       "3": "Übersetzungen verbessert: Statuszeile, Stoppgründe und die Chat-Meldungen eines Laufs folgen jetzt der Plugin-Sprache, statt immer Englisch zu sein"
+    },
+    "r21400": {
+      "1": "Die Sperre für Rotation Solver Reborn wurde entfernt: Die Warnung ist weg, und der Grind verweigert weder den Start noch stoppt er, solange RSR aktiviert ist",
+      "2": "Rotation Solver Reborn als Rotationsauswahl in den Kampfeinstellungen hinzugefügt: RSR drückt deine Fähigkeiten mit seiner eigenen PvP-Rotation, während das Plugin sich weiter anstellt, bewegt und Ziele wählt; die eingebaute Rotation springt ein, sobald RSR nicht läuft"
     }
   },
   "about": {
@@ -569,6 +573,9 @@
       "builtInHelp": "Dieses Plugin drückt die PvP-Fähigkeiten deines Jobs, Guard, Purify, Recuperate und Elixir selbst. Nichts weiter zu installieren. Die Voreinstellung.",
       "manual": "Manuell",
       "manualHelp": "Du drückst deine Fähigkeiten selbst. Der Bot stellt sich weiter in die Warteschlange, bewegt sich, zündet den Limitrausch und stellt sich erneut an.",
+      "solver": "Rotation Solver Reborn",
+      "solverHelp": "Rotation Solver Reborn drückt deine Fähigkeiten mit seiner eigenen PvP-Rotation. Der Bot stellt sich weiter in die Warteschlange, bewegt sich, wählt Ziele und zündet den Limitrausch. Die eingebaute Rotation springt ein, sobald RSR nicht läuft.",
+      "solverMissing": "Rotation Solver Reborn ist in Dalamud nicht aktiviert, daher drückt vorerst die eingebaute Rotation deine Fähigkeiten.",
       "group": "Rotation",
       "guardHp": "Guard unter",
       "guardHpHelp": "Drückt Guard, wenn deine HP darunter fallen. Guard verringert einige Sekunden lang den Schaden um 99 % und endet, sobald du eine andere Aktion einsetzt; der Bot bewegt sich deshalb weiter, hält aber seine Fähigkeiten zurück, solange es anhält.",
@@ -937,21 +944,6 @@
     "logToChatHelp": "Schreibt eine Zeile in den Chat, wenn ein LB auslöst, zum Beispiel „Seiton Tenchu auf Trainingspuppe ausgelöst“.",
     "chatFired": "{0} auf {1} ausgelöst"
   },
-  "conflicts": {
-    "title": "Rotation Solver Reborn erkannt",
-    "detail": "Rotation Solver Reborn (RSR) steht mit unserer PvP-Kampflogik in Konflikt. Deaktiviere es in Dalamud, um fortzufahren.",
-    "checkFailedTitle": "Kompatibilitätsprüfung nicht verfügbar",
-    "checkFailed": "Der Plugin-Status von Dalamud konnte nicht gelesen werden. Die Automatisierung ist gesperrt. Prüfe die Log-Seite und lade das Plugin neu.",
-    "blocked": "AUTOMATISIERUNG GESPERRT",
-    "startReason": "RSR deaktivieren, um fortzufahren",
-    "disable": "RSR deaktivieren",
-    "disabling": "Warte auf Dalamud...",
-    "disablePending": "Warte, bis RSR entladen ist.",
-    "disableFailed": "RSR ist noch geladen. Deaktiviere es in Dalamud Plugins oder seinen Sammlungen.",
-    "openPlugins": "Dalamud Plugins öffnen",
-    "startRefused": "Start nicht möglich: {0}",
-    "runStopped": "Automatisierung gestoppt: {0}"
-  },
   "status": {
     "closingGame": "Spiel wird geschlossen",
     "runningCommands": "Deine Chat-Befehle werden ausgeführt",
@@ -990,6 +982,7 @@
     "leaveFailed": "Der beendete Inhalt wurde nicht verlassen. Verlasse ihn manuell; der Lauf geht weiter, sobald du draußen bist.",
     "lifestreamMissing": "Installiere Lifestream, um „Ins Gasthaus zurückkehren“ zu nutzen.",
     "retiringToInn": "Lauf abgeschlossen. Zurück ins Gasthaus.",
+    "startRefused": "Start nicht möglich: {0}",
     "missingPlugins": "Start nicht möglich. Installiere zuerst alle benötigten Plugins: {0}."
   }
 }

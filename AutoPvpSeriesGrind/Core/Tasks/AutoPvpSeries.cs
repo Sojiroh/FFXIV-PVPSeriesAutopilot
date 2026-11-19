@@ -1,6 +1,5 @@
 using AutoPvpSeriesGrind.Core.Combat;
 using AutoPvpSeriesGrind.Core.Debug;
-using AutoPvpSeriesGrind.Core.External;
 using AutoPvpSeriesGrind.Core.Game;
 using AutoPvpSeriesGrind.Core.Humanize;
 using AutoPvpSeriesGrind.Core.Localization;
@@ -118,7 +117,11 @@ internal sealed partial class AutoPvpSeries : AutoCommon
         }
     }
 
-    public void StopAutomation() => movement.Stop();
+    public void StopAutomation()
+    {
+        movement.Stop();
+        rotation.ReleaseSolver();
+    }
 
     private void SetPhase(AutoPhase phase) => Plugin.Instance.Controller.Phase = phase;
 
@@ -172,7 +175,7 @@ internal sealed partial class AutoPvpSeries : AutoCommon
         rivalWings.SetStrategy(cfg.FrontlineStrategy, cfg.CustomFrontline);
         brain.OwnsTargeting = settings.BrainTargets;
         brain.Targeting = cfg.Targeting;
-        rotation.Configure(cfg.RotationProvider == RotationProvider.Internal, RotationSettings.From(cfg));
+        rotation.Configure(cfg.RotationProvider, RotationSettings.From(cfg));
 
         ApsgChat.Print(Loc.T(L.Notice.Starting, modeLabel, PlanText.StopSummary(cfg)));
 
@@ -183,12 +186,6 @@ internal sealed partial class AutoPvpSeries : AutoCommon
             if (!Svc.ClientState.IsLoggedIn)
             {
                 session.StopReason = Loc.T(L.Stop.LoggedOut);
-                return;
-            }
-            if (PluginConflicts.Read() is { Blocked: true } conflict)
-            {
-                session.StopReason = Loc.T(L.Conflicts.RunStopped, PluginConflicts.Reason(conflict));
-                ApsgChat.PrintError(session.StopReason);
                 return;
             }
             if (Svc.Objects.LocalPlayer is null || Svc.Condition[ConditionFlag.BetweenAreas] || Svc.Condition[ConditionFlag.BetweenAreas51])

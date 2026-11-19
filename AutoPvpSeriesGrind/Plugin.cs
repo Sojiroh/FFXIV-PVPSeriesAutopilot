@@ -58,7 +58,6 @@ public sealed class Plugin : IDalamudPlugin
         Cfg = Configuration;
         History = new RunHistory();
         Controller = new AutoPvpSeriesController();
-        Svc.Framework.Update += EnforcePluginCompatibility;
         LegacyLbImport.RunOnce(Configuration);
         LimitBreak = new LimitBreakController();
 
@@ -178,10 +177,6 @@ public sealed class Plugin : IDalamudPlugin
 
     private static string IdleReason()
     {
-        if (PluginConflicts.Read() is { Blocked: true } conflict)
-        {
-            return PluginConflicts.Reason(conflict);
-        }
         if (!ExternalPlugins.AllRequiredInstalled())
         {
             return Loc.T(L.Shell.InstallRequired);
@@ -216,7 +211,6 @@ public sealed class Plugin : IDalamudPlugin
 
     public void Dispose()
     {
-        Svc.Framework.Update -= EnforcePluginCompatibility;
         TaskScheduler.UnobservedTaskException -= unobservedTaskHandler;
 
         PluginInterface.UiBuilder.Draw -= WindowSystem.Draw;
@@ -243,12 +237,6 @@ public sealed class Plugin : IDalamudPlugin
             action();
         else
             ToggleMainUi();
-    }
-
-    private void EnforcePluginCompatibility(IFramework framework)
-    {
-        if (Controller.Running && PluginConflicts.Read() is { Blocked: true } conflict)
-            Controller.StopForConflict(conflict);
     }
 
     public void ToggleMainUi() => appWindow.TogglePage(AppWindow.Page.Grind);

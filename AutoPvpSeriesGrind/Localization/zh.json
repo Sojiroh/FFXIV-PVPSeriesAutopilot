@@ -440,6 +440,10 @@
       "1": "修复：极限技设置中的“极限技模式”和“阈值类型”按钮在文字较长的语言下会截断标签的问题，现在会加宽以容纳文字",
       "2": "新增 /psa reset：窗口跑到屏幕外或大到无法拖动时，以默认大小把它放回屏幕内",
       "3": "改进翻译：运行时的状态栏、停止原因和聊天消息现在会使用插件语言，而不再总是英文"
+    },
+    "r21400": {
+      "1": "移除了针对 Rotation Solver Reborn 的阻止：警告不再出现，启用 RSR 时刷取也不会再拒绝开始或被停止",
+      "2": "新增：战斗设置的循环选项中加入 Rotation Solver Reborn：RSR 用它自己的 PvP 循环按下你的技能，插件继续负责排队、移动和选择目标；RSR 未运行时由内置循环接手"
     }
   },
   "about": {
@@ -569,6 +573,9 @@
       "builtInHelp": "本插件自行按下你职业的 PvP 技能、Guard、Purify、Recuperate 和 Elixir。无需额外安装。默认选项。",
       "manual": "手动",
       "manualHelp": "技能由你自己按。机器人仍会负责排队、移动、释放极限技并重新排队。",
+      "solver": "Rotation Solver Reborn",
+      "solverHelp": "由 Rotation Solver Reborn 用它自己的 PvP 循环按下你的技能。机器人仍会负责排队、移动、选择目标并释放极限技。RSR 未运行时由内置循环接手。",
+      "solverMissing": "Rotation Solver Reborn 未在 Dalamud 中启用，目前由内置循环按下你的技能。",
       "group": "循环",
       "guardHp": "低于此血量时 Guard",
       "guardHpHelp": "血量跌到此值以下时按下 Guard。Guard 在数秒内减免 99% 伤害，使用其他技能时即会结束，因此期间机器人会继续移动，但暂停使用技能。",
@@ -937,21 +944,6 @@
     "logToChatHelp": "释放极限技时在聊天中输出一行，例如“对木人释放了星遁天诛”。",
     "chatFired": "对{1}释放了{0}"
   },
-  "conflicts": {
-    "title": "检测到 Rotation Solver Reborn",
-    "detail": "Rotation Solver Reborn（RSR）与本插件的PvP战斗逻辑冲突。请在Dalamud中停用它后继续。",
-    "checkFailedTitle": "无法检查兼容性",
-    "checkFailed": "无法读取Dalamud的插件状态，自动化已被阻止。请查看日志并重新加载本插件。",
-    "blocked": "自动化已被阻止",
-    "startReason": "停用RSR后继续",
-    "disable": "停用RSR",
-    "disabling": "等待Dalamud...",
-    "disablePending": "等待RSR从内存中卸载。",
-    "disableFailed": "RSR仍在运行。请在Dalamud插件列表或其所属合集里停用它。",
-    "openPlugins": "打开Dalamud插件",
-    "startRefused": "无法开始：{0}",
-    "runStopped": "自动化已停止：{0}"
-  },
   "status": {
     "closingGame": "正在关闭游戏",
     "runningCommands": "正在执行你的聊天命令",
@@ -990,6 +982,7 @@
     "leaveFailed": "未能离开已结束的任务。请手动离开，离开后会继续运行。",
     "lifestreamMissing": "安装 Lifestream 才能使用“返回旅馆”。",
     "retiringToInn": "运行完成，返回旅馆。",
+    "startRefused": "无法开始：{0}",
     "missingPlugins": "无法开始。请先安装所有必需插件：{0}。"
   }
 }

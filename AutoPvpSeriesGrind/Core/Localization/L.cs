@@ -279,6 +279,7 @@ internal static class L
         public static readonly LocString LifestreamMissing = new("notice.lifestreamMissing", "Install Lifestream to use \"Return to the inn\".");
         public static readonly LocString RetiringToInn = new("notice.retiringToInn", "Run complete. Retiring to the inn.");
         public static readonly LocString MissingPlugins = new("notice.missingPlugins", "Cannot start. Install all required plugins first: {0}.");
+        public static readonly LocString StartRefused = new("notice.startRefused", "Cannot start: {0}");
     }
 
     internal static class History
@@ -380,6 +381,12 @@ internal static class L
         public static readonly LocString Latest = new("changelog.latest", "Latest");
         public static readonly LocString New = new("changelog.new", "New");
         public static readonly LocPlural Changes = new("changelog.changes", "{0} change", "{0} changes");
+
+        public static readonly LocString[] Release21400 =
+        [
+            new("changelog.r21400.1", "Removed the Rotation Solver Reborn block: the warning is gone and the grind no longer refuses to start, or stops, while RSR is enabled"),
+            new("changelog.r21400.2", "Added Rotation Solver Reborn as a rotation choice in the Combat settings: RSR presses your skills with its own PvP rotation while the plugin keeps queueing, moving and picking targets, and the built-in rotation steps in whenever RSR is not running"),
+        ];
 
         public static readonly LocString[] Release21310 =
         [
@@ -633,6 +640,9 @@ internal static class L
         public static readonly LocString RotationBuiltInHelp = new("settings.rotation.builtInHelp", "This plugin presses your job's PvP skills, Guard, Purify, Recuperate and Elixir itself. Nothing extra to install. The default.");
         public static readonly LocString RotationManual = new("settings.rotation.manual", "Manual");
         public static readonly LocString RotationManualHelp = new("settings.rotation.manualHelp", "You press your own skills. The bot still queues, moves, fires the Limit Break and re-queues.");
+        public static readonly LocString RotationSolver = new("settings.rotation.solver", "Rotation Solver Reborn");
+        public static readonly LocString RotationSolverHelp = new("settings.rotation.solverHelp", "Rotation Solver Reborn presses your skills with its own PvP rotation. The bot still queues, moves, picks targets and fires the Limit Break. The built-in rotation steps in whenever RSR is not running.");
+        public static readonly LocString RotationSolverMissing = new("settings.rotation.solverMissing", "Rotation Solver Reborn is not enabled in Dalamud, so the built-in rotation presses your skills for now.");
         public static readonly LocString GroupRotation = new("settings.rotation.group", "Rotation");
         public static readonly LocString RotationGuardHp = new("settings.rotation.guardHp", "Guard below");
         public static readonly LocString RotationGuardHpHelp = new("settings.rotation.guardHpHelp", "Press Guard when your HP falls under this. Guard cuts 99% of damage for a few seconds and ends as soon as you use another action, so the bot keeps moving but holds its skills while it lasts.");
@@ -939,23 +949,6 @@ internal static class L
         public static readonly LocString LogToChat = new("limitBreak.logToChat", "Log to chat on fire");
         public static readonly LocString LogToChatHelp = new("limitBreak.logToChatHelp", "Prints a line to chat when an LB fires, for example \"fired Seiton Tenchu on Striking Dummy\".");
         public static readonly LocString ChatFired = new("limitBreak.chatFired", "fired {0} on {1}");
-    }
-
-    internal static class Conflicts
-    {
-        public static readonly LocString Title = new("conflicts.title", "Rotation Solver Reborn detected");
-        public static readonly LocString Detail = new("conflicts.detail", "RSR is a vibe-coded AI slop plugin that could potentially harm your computer.\n\nIts drama-loving developer spreads lies about us, falsely claiming that Auto PvP uses RSR. Auto PvP does not use RSR and has its own independent combat logic and rotations.\n\nRSR's weak PvP combat logic and rotations conflict with ours. For the best experience, disable RSR to continue automation.");
-        public static readonly LocString CheckFailedTitle = new("conflicts.checkFailedTitle", "Compatibility check unavailable");
-        public static readonly LocString CheckFailed = new("conflicts.checkFailed", "Could not read Dalamud's plugin state. Automation is blocked. Check the Log page and reload the plugin.");
-        public static readonly LocString Blocked = new("conflicts.blocked", "AUTOMATION BLOCKED");
-        public static readonly LocString StartReason = new("conflicts.startReason", "Disable RSR to continue");
-        public static readonly LocString Disable = new("conflicts.disable", "Disable RSR");
-        public static readonly LocString Disabling = new("conflicts.disabling", "Waiting for Dalamud...");
-        public static readonly LocString DisablePending = new("conflicts.disablePending", "Waiting for RSR to unload.");
-        public static readonly LocString DisableFailed = new("conflicts.disableFailed", "RSR is still loaded. Disable it in Dalamud Plugins or its collections.");
-        public static readonly LocString OpenPlugins = new("conflicts.openPlugins", "Open Dalamud Plugins");
-        public static readonly LocString StartRefused = new("conflicts.startRefused", "Cannot start: {0}");
-        public static readonly LocString RunStopped = new("conflicts.runStopped", "Automation stopped: {0}");
     }
 
     internal static class Plugin

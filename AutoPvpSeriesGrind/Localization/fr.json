@@ -440,6 +440,10 @@
       "1": "Correction : les boutons Mode de LB et Type de seuil des réglages de la Transcendance coupaient leurs libellés dans les langues plus longues ; ils s'élargissent désormais pour que le texte tienne",
       "2": "Ajout de /psa reset, qui ramène la fenêtre à l'écran à sa taille par défaut si elle s'est retrouvée hors de l'écran ou trop grande pour être saisie",
       "3": "Amélioration des traductions : la ligne d'état, les raisons d'arrêt et les messages de chat d'une session suivent désormais la langue du plugin au lieu d'être toujours en anglais"
+    },
+    "r21400": {
+      "1": "Suppression du blocage lié à Rotation Solver Reborn : l'avertissement disparaît et le grind ne refuse plus de démarrer et ne s'arrête plus quand RSR est activé",
+      "2": "Ajout de Rotation Solver Reborn comme choix de rotation dans les réglages de combat : RSR appuie sur vos compétences avec sa propre rotation JcJ pendant que le plugin continue de faire la file, de se déplacer et de choisir les cibles, et la rotation intégrée prend le relais dès que RSR ne tourne pas"
     }
   },
   "about": {
@@ -569,6 +573,9 @@
       "builtInHelp": "Ce plugin appuie lui-même sur les compétences JcJ de votre job, Garde, Purification, Récupération et Élixir. Rien d'autre à installer. Le choix par défaut.",
       "manual": "Manuel",
       "manualHelp": "Vous appuyez vous-même sur vos compétences. Le bot continue de faire la file, de se déplacer, de déclencher la Transcendance et de se réinscrire.",
+      "solver": "Rotation Solver Reborn",
+      "solverHelp": "Rotation Solver Reborn appuie sur vos compétences avec sa propre rotation JcJ. Le bot continue de faire la file, de se déplacer, de choisir les cibles et de déclencher la Transcendance. La rotation intégrée prend le relais dès que RSR ne tourne pas.",
+      "solverMissing": "Rotation Solver Reborn n'est pas activé dans Dalamud ; la rotation intégrée appuie donc sur vos compétences pour le moment.",
       "group": "Rotation",
       "guardHp": "Garde sous",
       "guardHpHelp": "Utilise Garde quand vos PV passent sous ce seuil. Garde réduit les dégâts de 99 % pendant quelques secondes et cesse dès que vous utilisez une autre action ; le bot continue donc de se déplacer mais retient ses compétences tant qu'elle dure.",
@@ -937,21 +944,6 @@
     "logToChatHelp": "Affiche une ligne dans le chat quand un LB se déclenche, par exemple « Seiton Tenchu déclenché sur Mannequin d'entraînement ».",
     "chatFired": "{0} déclenché sur {1}"
   },
-  "conflicts": {
-    "title": "Rotation Solver Reborn détecté",
-    "detail": "Rotation Solver Reborn (RSR) entre en conflit avec notre logique de combat JcJ. Désactivez-le dans Dalamud pour continuer.",
-    "checkFailedTitle": "Vérification de compatibilité indisponible",
-    "checkFailed": "Impossible de lire l’état des plugins de Dalamud. L’automatisation est bloquée. Consultez le journal et rechargez le plugin.",
-    "blocked": "AUTOMATISATION BLOQUÉE",
-    "startReason": "Désactivez RSR pour continuer",
-    "disable": "Désactiver RSR",
-    "disabling": "En attente de Dalamud...",
-    "disablePending": "En attente du déchargement de RSR.",
-    "disableFailed": "RSR est toujours chargé. Désactivez-le dans les plugins de Dalamud ou dans ses collections.",
-    "openPlugins": "Ouvrir les plugins Dalamud",
-    "startRefused": "Démarrage impossible : {0}",
-    "runStopped": "Automatisation arrêtée : {0}"
-  },
   "status": {
     "closingGame": "Fermeture du jeu",
     "runningCommands": "Exécution de vos commandes de chat",
@@ -990,6 +982,7 @@
     "leaveFailed": "La mission terminée n'a pas été quittée. Quittez-la manuellement ; la session reprend dès que vous êtes dehors.",
     "lifestreamMissing": "Installez Lifestream pour utiliser « Rentrer à l'auberge ».",
     "retiringToInn": "Session terminée. Retour à l'auberge.",
+    "startRefused": "Démarrage impossible : {0}",
     "missingPlugins": "Démarrage impossible. Installez d'abord tous les plugins requis : {0}."
   }
 }

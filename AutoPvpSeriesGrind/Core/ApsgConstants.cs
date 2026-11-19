@@ -65,6 +65,15 @@ internal static class ApsgConstants
         public const string NavStop = "/vnav stop";
     }
 
+    // Sent to Dalamud's command manager, not to game chat. Henched presses skills on the current target and
+    // leaves targeting to the caller; Auto lets RSR pick targets too.
+    internal static class RotationSolverCommands
+    {
+        public const string PressOnly = "/rotation Henched";
+        public const string PressAndTarget = "/rotation Auto";
+        public const string Off = "/rotation Off";
+    }
+
     internal static class LifestreamCommands
     {
         public const string ReturnToInn = "inn";
@@ -83,6 +92,8 @@ internal static class ApsgConstants
 
         public const string LifestreamExecuteCommand = "Lifestream.ExecuteCommand";
         public const string LifestreamIsBusy = "Lifestream.IsBusy";
+
+        public const string RotationSolverActive = "RotationSolverReborn.AutorotationActive";
     }
 
     // Type-name fragment identifying vnavmesh's IPC provider in faulted-task exception text.

@@ -4,4 +4,5 @@ public enum RotationProvider
 {
     Internal,
     Manual,
+    RotationSolver,
 }

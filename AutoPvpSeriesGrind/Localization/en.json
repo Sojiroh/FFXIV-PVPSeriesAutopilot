@@ -440,6 +440,10 @@
       "1": "Fixed the LB mode and Threshold type buttons in the Limit Break settings cutting off their labels in longer languages: they now widen to fit",
       "2": "Added /psa reset, which brings the window back on screen at its default size if it ended up off screen or too large to grab",
       "3": "Improved translations: the status line, stop reasons and the chat messages a run prints now follow the plugin language instead of always being in English"
+    },
+    "r21400": {
+      "1": "Removed the Rotation Solver Reborn block: the warning is gone and the grind no longer refuses to start, or stops, while RSR is enabled",
+      "2": "Added Rotation Solver Reborn as a rotation choice in the Combat settings: RSR presses your skills with its own PvP rotation while the plugin keeps queueing, moving and picking targets, and the built-in rotation steps in whenever RSR is not running"
     }
   },
   "about": {
@@ -569,6 +573,9 @@
       "builtInHelp": "This plugin presses your job's PvP skills, Guard, Purify, Recuperate and Elixir itself. Nothing extra to install. The default.",
       "manual": "Manual",
       "manualHelp": "You press your own skills. The bot still queues, moves, fires the Limit Break and re-queues.",
+      "solver": "Rotation Solver Reborn",
+      "solverHelp": "Rotation Solver Reborn presses your skills with its own PvP rotation. The bot still queues, moves, picks targets and fires the Limit Break. The built-in rotation steps in whenever RSR is not running.",
+      "solverMissing": "Rotation Solver Reborn is not enabled in Dalamud, so the built-in rotation presses your skills for now.",
       "group": "Rotation",
       "guardHp": "Guard below",
       "guardHpHelp": "Press Guard when your HP falls under this. Guard cuts 99% of damage for a few seconds and ends as soon as you use another action, so the bot keeps moving but holds its skills while it lasts.",
@@ -937,21 +944,6 @@
     "logToChatHelp": "Prints a line to chat when an LB fires, for example \"fired Seiton Tenchu on Striking Dummy\".",
     "chatFired": "fired {0} on {1}"
   },
-  "conflicts": {
-    "title": "Rotation Solver Reborn detected",
-    "detail": "RSR is a vibe-coded AI slop plugin that could potentially harm your computer.\n\nIts drama-loving developer spreads lies about us, falsely claiming that Auto PvP uses RSR. Auto PvP does not use RSR and has its own independent combat logic and rotations.\n\nRSR's weak PvP combat logic and rotations conflict with ours. For the best experience, disable RSR to continue automation.",
-    "checkFailedTitle": "Compatibility check unavailable",
-    "checkFailed": "Could not read Dalamud's plugin state. Automation is blocked. Check the Log page and reload the plugin.",
-    "blocked": "AUTOMATION BLOCKED",
-    "startReason": "Disable RSR to continue",
-    "disable": "Disable RSR",
-    "disabling": "Waiting for Dalamud...",
-    "disablePending": "Waiting for RSR to unload.",
-    "disableFailed": "RSR is still loaded. Disable it in Dalamud Plugins or its collections.",
-    "openPlugins": "Open Dalamud Plugins",
-    "startRefused": "Cannot start: {0}",
-    "runStopped": "Automation stopped: {0}"
-  },
   "status": {
     "closingGame": "Closing the game",
     "runningCommands": "Running your chat commands",
@@ -990,6 +982,7 @@
     "leaveFailed": "The finished duty did not exit. Leave it manually; the run carries on once you are out.",
     "lifestreamMissing": "Install Lifestream to use \"Return to the inn\".",
     "retiringToInn": "Run complete. Retiring to the inn.",
+    "startRefused": "Cannot start: {0}",
     "missingPlugins": "Cannot start. Install all required plugins first: {0}."
   }
 }

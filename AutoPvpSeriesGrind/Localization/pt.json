@@ -440,6 +440,10 @@
       "1": "Corrigido: os botões Modo do LB e Tipo de limite nas configurações do Limit Break cortavam os rótulos em idiomas mais longos; agora eles se alargam para caber o texto",
       "2": "Adicionado /psa reset, que traz a janela de volta à tela no tamanho padrão se ela tiver ido para fora da tela ou ficado grande demais para arrastar",
       "3": "Traduções melhoradas: a linha de status, os motivos de parada e as mensagens de chat de uma sessão agora seguem o idioma do plugin em vez de ficarem sempre em inglês"
+    },
+    "r21400": {
+      "1": "Removido o bloqueio do Rotation Solver Reborn: o aviso sumiu e o grind não se recusa mais a iniciar nem para enquanto o RSR está ativado",
+      "2": "Adicionado o Rotation Solver Reborn como opção de rotação nas configurações de combate: o RSR aperta suas habilidades com a própria rotação de JcJ enquanto o plugin continua entrando na fila, se movendo e escolhendo alvos, e a rotação embutida assume sempre que o RSR não estiver rodando"
     }
   },
   "about": {
@@ -569,6 +573,9 @@
       "builtInHelp": "Este plugin aperta sozinho as habilidades de JcJ do seu trabalho, Guard, Purify, Recuperate e Elixir. Nada mais para instalar. O padrão.",
       "manual": "Manual",
       "manualHelp": "Você aperta suas próprias habilidades. O bot continua entrando na fila, se movendo, disparando o Limit Break e voltando para a fila.",
+      "solver": "Rotation Solver Reborn",
+      "solverHelp": "O Rotation Solver Reborn aperta suas habilidades com a própria rotação de JcJ. O bot continua entrando na fila, se movendo, escolhendo alvos e disparando o Limit Break. A rotação embutida assume sempre que o RSR não estiver rodando.",
+      "solverMissing": "O Rotation Solver Reborn não está ativado no Dalamud, então por enquanto a rotação embutida aperta suas habilidades.",
       "group": "Rotação",
       "guardHp": "Guard abaixo de",
       "guardHpHelp": "Usa Guard quando sua vida cai abaixo disto. Guard reduz o dano em 99% por alguns segundos e termina assim que você usa outra ação; por isso o bot continua se movendo, mas segura as habilidades enquanto dura.",
@@ -937,21 +944,6 @@
     "logToChatHelp": "Escreve uma linha no chat quando um LB dispara, por exemplo “Seiton Tenchu disparado em Striking Dummy”.",
     "chatFired": "{0} disparado em {1}"
   },
-  "conflicts": {
-    "title": "Rotation Solver Reborn detectado",
-    "detail": "Rotation Solver Reborn (RSR) entra em conflito com nossa lógica de combate PvP. Desative-o no Dalamud para continuar.",
-    "checkFailedTitle": "Verificação de compatibilidade indisponível",
-    "checkFailed": "Não foi possível ler o estado dos plugins do Dalamud. A automação está bloqueada. Verifique o registro e recarregue o plugin.",
-    "blocked": "AUTOMAÇÃO BLOQUEADA",
-    "startReason": "Desative o RSR para continuar",
-    "disable": "Desativar RSR",
-    "disabling": "Aguardando o Dalamud...",
-    "disablePending": "Aguardando o descarregamento do RSR.",
-    "disableFailed": "O RSR ainda está carregado. Desative-o nos plugins do Dalamud ou em suas coleções.",
-    "openPlugins": "Abrir plugins do Dalamud",
-    "startRefused": "Não é possível iniciar: {0}",
-    "runStopped": "Automação interrompida: {0}"
-  },
   "status": {
     "closingGame": "Fechando o jogo",
     "runningCommands": "Executando seus comandos de chat",
@@ -990,6 +982,7 @@
     "leaveFailed": "Não foi possível sair do conteúdo concluído. Saia manualmente; a sessão continua assim que você sair.",
     "lifestreamMissing": "Instale o Lifestream para usar \"Voltar para a estalagem\".",
     "retiringToInn": "Sessão concluída. Voltando para a estalagem.",
+    "startRefused": "Não é possível iniciar: {0}",
     "missingPlugins": "Não é possível iniciar. Instale antes todos os plugins necessários: {0}."
   }
 }
